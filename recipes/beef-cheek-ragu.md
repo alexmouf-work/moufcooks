@@ -202,3 +202,15 @@ and 1 small garlic clove, all chopped finely together. Scatter it over just befo
 ## Cook's notes
 
 *(Add what happened each time you make it: timings, what you'd change, who liked it.)*
+
+**17 October 2026 (first cook, Alexander; in progress)**
+- Three trimmed cheeks (1.25 kg), halved, salted for one hour.
+- Bones were thin, whole shin bones, too hard to cut at home. Roasted whole for about 20 minutes; little solid
+  marrow, but they released plenty of liquid fat. That fat was used for searing, and some kept for the finish in
+  place of scooped marrow. Two of the smaller bones went into the braise. Next time: ask the butcher for thick
+  marrow bones cut into rounds.
+- Pancetta rendered with a dash of water, then crisped.
+- One-pan order instead of a separate frying pan: vegetables, then garlic, all out; sear the cheeks in the same
+  casserole; vegetables back; tomato purée fried after the searing so it doesn't burn; then wine.
+- No anchovies.
+- In the oven at 130 °C fan, with a cartouche and the lid on.
