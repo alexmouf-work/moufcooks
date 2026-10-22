@@ -5,7 +5,7 @@ cheeks cook until they fall apart at a touch. This version is made in a single d
 
 - **Serves:** 6–8 with pasta (1.25 kg raw cheek gives roughly 750 g cooked meat)
 - **Time:** about 6½ hours from start to table: 1 h 20 min hands-on, 3½–4½ h in the oven, 1 h to rest and finish
-- **Status:** written 17 October 2026; first cook the same day. Add notes at the bottom.
+- **Status:** cooked 17 October 2026. Verdict: "very, very pleased". See the cook's notes at the bottom.
 
 ## Ingredients
 
@@ -162,8 +162,9 @@ stock, Parmesan and reducing all add salt.
 
 ## Serving
 
-**Pasta (my pick): pappardelle.** Its wide ribbons hold shredded meat better than any other shape. Use 100 g dried or
-120 g fresh pasta per person. Cook it 1–2 minutes short of the packet time, then toss it in a wide pan with the ragù and a
+**Pasta: tagliatelle.** Pappardelle was tried on the first cook and was too wide to wrap round the meat nicely,
+even cooked exactly right. Tagliatelle is narrower but still flat enough to carry the shredded meat. Use 100 g dried
+or 120 g fresh pasta per person. Cook it 1–2 minutes short of the packet time, then toss it in a wide pan with the ragù and a
 splash of the pasta water for a minute or two, until the sauce clings and shines. Serve with Parmesan.
 
 **Risotto: risotto alla milanese.** This is the classic partner for braised beef in Milan (it's what ossobuco is served
@@ -203,7 +204,7 @@ and 1 small garlic clove, all chopped finely together. Scatter it over just befo
 
 *(Add what happened each time you make it: timings, what you'd change, who liked it.)*
 
-**17 October 2026 (first cook, Alexander; in progress)**
+**17 October 2026 (first cook, Alexander)**
 - Three trimmed cheeks (1.25 kg), halved, salted for one hour.
 - Bones were thin, whole shin bones, too hard to cut at home. Roasted whole for about 20 minutes; little solid
   marrow, but they released plenty of liquid fat. That fat was used for searing, and some kept for the finish in
@@ -213,4 +214,7 @@ and 1 small garlic clove, all chopped finely together. Scatter it over just befo
 - One-pan order instead of a separate frying pan: vegetables, then garlic, all out; sear the cheeks in the same
   casserole; vegetables back; tomato purée fried after the searing so it doesn't burn; then wine.
 - No anchovies.
-- In the oven at 130 °C fan, with a cartouche and the lid on.
+- In the oven at 130 °C fan, with a cartouche and the lid on; cooked until about 8 pm.
+- Verdict: "very, very pleased". Exceptionally tender; deep, full-bodied flavour; rich but not overly so. The
+  shredded meat left a little texture in the sauce, which was the best part: some variation from bite to bite.
+- Served with pappardelle, which was too wide to wrap nicely round the meat. Next time: tagliatelle.
