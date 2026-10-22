@@ -31,6 +31,8 @@ ideas.
 ## Adding a recipe (for now)
 
 Copy an existing file in `recipes/`, name it after the dish in lower case with hyphens (`beef-cheek-ragu.md`), and keep
-the same sections: what it is, ingredients, method (with why each step matters), serving, notes.
+the same sections: what it is, a shopping list (assume nothing is in the cupboard), a timeline (recipes are usually
+planned a day or two ahead), method (with why each step matters), serving, leftovers (how it keeps and what to turn it
+into next), notes.
 
 British English and metric throughout. Oven temperatures give both fan and conventional settings.
