@@ -175,7 +175,9 @@ nori goes in last because it softens within a minute.
 - **Heat:** 1 tbsp doubanjiang gives a warm background heat, and the chilli crisp adds the rest. For real heat, use 2 tbsp
   and a pinch of ground Sichuan pepper.
 - **Smooth broth:** strain it after step 6, before adding the miso.
-- **Sweetcorn:** charred corn is the other classic Sapporo topping, left out this time; easy to add later.
+- **Sweetcorn:** loose kernels are the classic Sapporo topping, but they spread through every spoonful. Keep the corn in
+  one piece instead: miso-butter corn ribs (quartered cobs, brushed with miso butter and charred) on the side or laid
+  across the bowl.
 
 ## Cook's notes
 
