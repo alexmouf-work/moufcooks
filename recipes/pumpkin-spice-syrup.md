@@ -4,7 +4,7 @@ A thick, deeply spiced syrup made with real pumpkin, brown sugar and whole spice
 spice latte takes as long as your coffee does. It's richer and spicier than café versions.
 
 - **Makes:** about 350 ml, enough for 10–12 lattes
-- **Time:** 20 minutes to cook · 30 minutes to steep · then 5 minutes per latte
+- **Same day:** about 1 hour, then 5 minutes per latte · **Elevated:** steeped overnight, first latte the next day
 - **Keeps:** 10 days in the fridge; months frozen (see Leftovers)
 - **Status:** written 26 October 2026; not yet made. Add notes at the bottom.
 
@@ -32,10 +32,14 @@ spice latte takes as long as your coffee does. It's richer and spicier than caf�
 **Kit:** a small saucepan · a fine sieve · a clean glass bottle or jar (rinse it with boiling water first) · a milk
 frother, or a jar with a lid.
 
-## Timeline
+## Versions
 
-There's no ahead-of-time work here. Make the syrup whenever suits, and it's ready about an hour later. It tastes even
-better the next day, once the spices have settled.
+**Same day** (about 1 hour): make the syrup (steps 1–6), steeping for 30 minutes, and it's ready to use.
+
+**Elevated** (overnight): at step 4, steep for 2 hours, then refrigerate the syrup overnight **with the spices still in
+it**. Strain it the next morning (step 5) and finish it (step 6).
+*Why:* the spices go on giving flavour as the syrup sits cold, so it comes out stronger and rounder, with the clove and
+allspice settled into the background rather than standing out.
 
 ## Method: the syrup
 
