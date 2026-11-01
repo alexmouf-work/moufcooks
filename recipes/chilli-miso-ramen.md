@@ -5,7 +5,7 @@ thigh, jammy soy-marinated eggs, seared pak choi and a knob of butter. Based on 
 together: a stronger broth, skin-on chicken, a proper egg marinade and real ramen noodles.
 
 - **Serves:** 4
-- **Time:** Day 1, about 40 minutes of prep plus overnight marinating · Day 2, about 1 h 15 min
+- **Same day:** about 3 hours · **Elevated:** two days, with overnight soaking and marinating
 - **Status:** written 1 November 2026; not yet cooked. Add notes at the bottom.
 
 ## Shopping list
@@ -42,7 +42,25 @@ together: a stronger broth, skin-on chicken, a proper egg marinade and real rame
 **Kit:** a large pan for the broth · a large frying pan, ideally with a lid · a pot for the eggs and noodles · a bowl of iced
 water · a zip-lock bag · a probe thermometer.
 
-## Timeline
+## Versions
+
+**Same day** (about 3 hours)
+
+| From start | Do |
+|---|---|
+| 0:00 | Boil, peel and marinate the eggs (step 3). Marinate the chicken in the fridge (step 2). |
+| 0:20 | Hot-soak the stock: kombu and shiitake in the stock, heated to steaming but not simmering, for 30 minutes. Lift the kombu out before it boils. |
+| 0:50 | Make the broth (steps 4–6). |
+| 2:00 | Fry the chicken, then the pak choi (steps 7–9). |
+| 2:40 | Finish the broth, cook the noodles, assemble (steps 10–13). |
+
+After only 2 hours in the marinade, the eggs are paler and seasoned mostly at the edge. The chicken is seasoned less
+deeply, and the stock is a little lighter.
+
+**Elevated** (two days): the timeline below.
+
+*Why elevated tastes deeper:* overnight, the eggs turn deep amber and the yolk itself takes on the seasoning, the soy
+works right through the chicken, and the cold soak draws more from the kombu and shiitake without any bitterness.
 
 | When | Do |
 |---|---|

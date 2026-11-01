@@ -4,11 +4,11 @@ A whole chicken, flattened and roasted with the lid on over a two-zone charcoal 
 juicy meat and a light smoke, and the breast and legs finish at the same time.
 
 - **Serves:** 4
-- **Time:** salting (overnight is best, 2 hours at least) · 30 min to light and set up · 45–60 min on the grill · 15 min rest
+- **Same day:** about 3½ hours (2 hours salting) · **Elevated:** overnight salting, plus smoke
 - **Grill:** Weber charcoal kettle with lid (written for a standard 57 cm kettle)
 - **Status:** written 22 October 2026; not yet cooked. Add notes at the bottom.
 
-## Ingredients
+## Shopping list
 
 **The chicken**
 - 1 whole chicken, 1.6–2 kg (free-range if you can; the skin crisps better)
@@ -30,6 +30,32 @@ juicy meat and a light smoke, and the breast and legs finish at the same time.
 **Kit:** sharp kitchen scissors · chimney starter · about 70–80 charcoal briquettes (a full chimney) · a foil tray for
 drips · probe thermometer · long tongs · heatproof gloves. Optional: a fist-sized chunk of apple or cherry wood for
 smoke.
+
+## Versions
+
+**Same day** (about 3½ hours)
+
+| From start | Do |
+|---|---|
+| 0:00 | Spatchcock and dry-brine the chicken; leave uncovered in the fridge (steps 1–2). Make the herb butter (step 3). |
+| 1:30 | Light the chimney (step 4). |
+| 1:50 | Set up two zones and the vents; heat the grill (steps 5–6). |
+| 2:00 | Butter under the skin; chicken on (step 7). |
+| 2:45–3:00 | Done? Rest (steps 10–12). Grill sides while it rests. |
+| 3:15 | Carve and serve (step 13). |
+
+The skin crisps a little less after only 2 hours of salting, and the seasoning stays nearer the surface.
+
+**Elevated** (two days)
+
+| When | Do |
+|---|---|
+| Day 1, evening (20 min) | Spatchcock and dry-brine overnight, uncovered (steps 1–2). Make the herb butter and refrigerate it; take it out an hour before using. |
+| Day 2 | As the same-day version from lighting the chimney, **with the wood chunk** on the coals for smoke. |
+
+*Why elevated tastes better:* overnight, the salt seasons the meat right through and the skin dries out completely, so
+it crisps and blisters properly. The herb butter's garlic and lemon soften into the butter overnight. The wood adds a
+light smoke the same-day version goes without.
 
 ## Method
 
@@ -114,6 +140,14 @@ While the chicken rests, the coals are still hot. Use them:
 - **Corn on the cob, peppers or courgettes**, straight over the coals.
 - **A sauce:** garlic yoghurt (yoghurt, a grated garlic clove, lemon juice, salt) or salsa verde (parsley, capers, mustard,
   vinegar, olive oil).
+
+## Leftovers
+
+- **Keeps** 3 days in the fridge. Pull the meat off the bone before storing it; it's much easier while it's still warm.
+- **Re-crisp** the skin and meat in a hot, dry pan before using.
+- **Carcass:** keep it for stock, which picks up the smoke.
+- **What to make:** chicken and herb salad with the grilled lemon squeezed over; flatbread wraps with garlic yoghurt;
+  a toasted sandwich with mayonnaise and crisp skin; fried rice.
 
 ## Notes
 
