@@ -6,8 +6,8 @@ lardons, shallots and mushrooms are each cooked separately and added at the end,
 than melting into the sauce.
 
 - **Serves:** 4
-- **Same day:** about 3½ hours, 1½ of them hands-on · **Overnight-salted (this cook):** 10 minutes the night before,
-  then the same day · **Elevated:** cooked a day ahead and rested overnight
+- **Same day:** about 3½ hours, 1½ of them hands-on; salt the chicken in the morning if you can · **Elevated:**
+  cooked a day ahead and rested overnight
 - **Status:** written 9 November 2026 from Alexander's starting recipe; first cook planned for 10 November, served at 7 pm.
 
 ## Shopping list
@@ -45,12 +45,13 @@ than melting into the sauce.
 
 ## Versions
 
-**Overnight-salted, served at 7 pm** (the plan for this cook)
+**Same day, served at 7 pm** (the plan for this cook)
 
 | When | Do |
 |---|---|
-| Night before, 10–15 min | Salt the chicken and refrigerate it uncovered (step 1). Peel the shallots; dice the onion, carrot and celery. |
-| Next day, 3:30 pm | Chicken out of the fridge. Make the beurre manié. |
+| Morning, after shopping (5 min) | Salt the chicken and refrigerate it uncovered (step 1). |
+| 3:00 pm | Peel the shallots; dice the onion, carrot and celery. |
+| 3:30 | Chicken out of the fridge. Make the beurre manié. |
 | 3:45 | Render the lardons (step 2). |
 | 4:00 | Brown the chicken (step 3). |
 | 4:30 | Vegetables, purée, cognac, wine reduced (steps 4–6). |
@@ -61,9 +62,9 @@ than melting into the sauce.
 | 6:50 | Garnish back in; plate (step 13). |
 | 7:00 | Serve. |
 
-**Same day** (no overnight salting): salt the chicken when you start, at least an hour before browning (sear straight
-away or after the full hour, never in between; see the ragù for why). The meat is seasoned less deeply and the skin
-browns less readily, but the rest is identical.
+*Salting:* the longer the better, up to overnight, which is why it goes on in the morning. If you only manage an hour,
+that still works; sear either straight after salting or after the full hour, never in between (see the ragù for why).
+Less time means the meat is seasoned less deeply and the skin browns less readily.
 
 **Elevated** (a day ahead): salt the chicken two nights before, and cook the whole braise the day before (steps 1–8).
 Cool it in the liquid and refrigerate overnight. On the day, lift off the set fat, reheat it in the oven at 150 °C fan
@@ -73,7 +74,7 @@ back liquid as it cools. It's also the calmest version to serve: on the day, you
 
 ## Method
 
-### The night before
+### Salting (in the morning, or the night before)
 
 **1. Salt the chicken.** Pat the thighs dry and sprinkle the salt evenly over both sides, most of it on the skin. Leave
 them skin-up and uncovered on a rack or plate in the fridge.
