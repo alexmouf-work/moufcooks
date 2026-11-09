@@ -5,7 +5,7 @@ glossy, with a cognac base. The skin finishes in the oven above the sauce, so it
 lardons, shallots and mushrooms are each cooked separately and added at the end, so they stay distinct pieces rather
 than melting into the sauce.
 
-- **Serves:** 4
+- **Serves:** 4 (see *For a crowd* for 6–8)
 - **Same day:** about 3½ hours, 1½ of them hands-on; salt the chicken in the morning if you can · **Elevated:**
   cooked a day ahead and rested overnight
 - **Status:** written 9 November 2026 from Alexander's starting recipe; first cook planned for 10 November, served at 7 pm.
@@ -71,6 +71,60 @@ Cool it in the liquid and refrigerate overnight. On the day, lift off the set fa
 for 40 minutes with the lid off so the skin re-crisps, then finish (steps 9–13).
 *Why it's better:* a night's rest settles the sauce and melds the wine, cognac and smoke into one, and the meat takes
 back liquid as it cools. It's also the calmest version to serve: on the day, you only glaze, fry and reduce.
+
+## For a crowd (6–8 people, mixed breast and thigh)
+
+A casserole won't hold a dozen pieces skin-up in one layer, so build the sauce in the casserole on the hob, then braise
+in a large, deep roasting tray in the oven.
+
+**Change the shopping list to:**
+- **Chicken:** 8 bone-in, skin-on thighs and 5 bone-in, skin-on breasts ("supremes"). Bone-in breasts dry out far less
+  than boneless ones.
+- **Salt:** still 1% of the total weight of the chicken.
+- **Garnish:** about 1½ times the main recipe. That's 300 g lardons, 18–20 shallots and 450 g mushrooms.
+- **Braise:** also about 1½ times. That's two bottles of wine (you'll use about 1.1 litres), 450 ml stock, 75 ml cognac,
+  and 1½ times the onion, carrot, celery and garlic.
+- **Beurre manié:** 30 g butter and 30 g flour.
+- **Mash:** 2 kg potatoes.
+- **Kit:** add a roasting tray at least 5 cm deep that holds all 13 pieces in one layer, and foil.
+
+**How it changes**
+- **Brown the skin only** (step 3), in batches. Use the frying pan alongside the casserole to halve the time. Six to
+  eight minutes skin-side down is enough; the meat cooks in the oven.
+- **Make the sauce in the casserole** exactly as steps 4–7, but without the chicken.
+- **Thighs into the tray first,** skin-up. Pour the sauce around them, to about two-thirds of the way up the meat, with
+  the skin clear. Cover the tray tightly with foil. Oven at 150 °C fan (170 °C conventional) for 50 minutes.
+- **Then take off the foil and add the breasts,** skin-up, tucked between the thighs. Cook uncovered for 30–35 minutes
+  more.
+- **They're done when** the breasts read **68 °C** at the thickest point and the thighs **80–85 °C**. Lift the breasts
+  out first if they get there sooner.
+- **Finish the sauce:** pour it from the tray back into the casserole, then reduce and thicken it as in step 12 while
+  the chicken rests, uncovered, on warm platters.
+
+*Why breasts go in later:* breast meat is lean, and juiciest just under 70 °C; past that it dries and turns stringy.
+Thighs are full of connective tissue that needs time at a higher temperature to soften. Same tray, different clocks.
+*Why foil, then none:* the foil keeps the thighs steaming gently at first. Uncovered, the skin crisps and the sauce
+starts to reduce.
+
+| Time | Do |
+|---|---|
+| Morning, after shopping | Salt all the chicken; refrigerate uncovered. |
+| 2:45 pm | Chicken out of the fridge. Peel the shallots; dice the vegetables; make the beurre manié. |
+| 3:00 | Render the lardons in the casserole. |
+| 3:15 | Brown the chicken skin in batches, in the casserole and the frying pan at once. |
+| 3:50 | Vegetables, tomato purée, cognac, then the wine reduced, in the casserole. |
+| 4:25 | Stock, herbs and half the lardons in; simmer. Thighs into the tray; sauce around them; foil on; into the oven. |
+| 4:35 | Glaze the shallots, then fry the mushrooms. |
+| 5:15 | Foil off; breasts in. |
+| 5:30 | Potatoes on for the mash. |
+| 5:50 | Check the temperatures. Chicken onto warm platters; sauce into the casserole to reduce and thicken. |
+| 6:20 | Mash. Shallots and mushrooms into the sauce. |
+| 6:40 | Plate or set out platters. |
+| 7:00 | Serve. |
+
+**Serving a mixed crowd:** slice the breasts thickly off the bone and lay them on one side of a platter, with the thighs on
+the other, so people can choose. Spoon the sauce, shallots and mushrooms around them, then scatter over the lardons and
+parsley.
 
 ## Method
 
