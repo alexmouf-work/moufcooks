@@ -203,3 +203,12 @@ steam dry for 2 minutes, then mash or rice with about 200 g butter and the warm 
 ## Cook's notes
 
 *(Add what happened each time you make it: timings, what you'd change, who liked it.)*
+
+**10 November 2026 (first cook, Alexander; in progress)**
+- Work ran late: cooking started about 2:15 pm, serving moved to 7:30. Cooked straight through, no rest.
+- The butcher boned and skinned the thighs and gave the bones and skin. The skin was in small pieces; it was overlapped
+  and pressed and came out "beautifully". The bones were roasted and tucked into the braise rather than made into stock.
+  Their fat replaced the goose fat.
+- Shallots in place of onions throughout. Pickles made with white wine vinegar.
+- The roasted carrots and shallots were skipped ("not enough effort per unit value"); mushrooms only, oven-roasted.
+- Dried herbs instead of fresh: 1 g thyme, 0.5 g rosemary, 2 bay leaves.
