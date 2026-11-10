@@ -97,6 +97,7 @@ and stretched on a tray lined with baking paper, and salt them. Rub a little thy
 Cover with a second sheet of paper and the second tray, and weight it with something ovenproof. Roast at **190 °C fan
 for 30–45 minutes** until deep golden and glassy; check from 25 minutes. Drain on kitchen paper, then keep them in an
 airtight box once cool. Pour the rendered chicken fat into a jar.
+*Small pieces?* Overlap them by about 1 cm before pressing; the overlaps fuse into larger sheets as they render.
 *Why pressed:* left loose, skin curls and shrinks into crinkly bits. Pressed between trays, it sets flat and rigid, so it
 can stand up in the mash. It shrinks by about half, which is why you buy 300 g.
 
@@ -185,6 +186,11 @@ steam dry for 2 minutes, then mash or rice with about 200 g butter and the warm 
 
 ## Notes
 
+- **If the butcher gives you the bones** (a carcass and thigh bones): roast them at 200 °C fan for 30–40 minutes until
+  deep golden, then simmer them with about 2 litres of cold water, a bay leaf and a few peppercorns (no salt) at the
+  barest bubble for 2–3 hours. Strain, and use it in place of the bought stock. It's richer, and its gelatine gives the
+  sauce body, so the wings become optional. Short of time: roast the bones and tuck them into the braise instead, and lift
+  them out before serving.
 - **Wine:** Burgundy is the classic, because it's Pinot Noir: light, fruity, and it doesn't turn bitter when reduced.
   Avoid heavy, oaky reds. Serve the same kind with dinner.
 - **Showpiece version (skin-on, in a roasting tray):** use bone-in, skin-on thighs and breasts. Make the sauce in the
