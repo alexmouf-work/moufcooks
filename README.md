@@ -2,25 +2,21 @@
 
 A family recipe book. Alexander and their family each add the recipes they cook, and anyone can read them.
 
-**Status:** a folder of Markdown recipes for now. The website below is planned, not built.
+**Status:** a folder of Markdown recipes for now. The website below is mocked up, not built.
 
 ## The plan
 
-- **Anyone can read.** No login is needed to view a recipe.
-- **Family can add.** Adding or editing a recipe needs a Google sign-in. Each family member uses their own account.
-- **Looks like MoufTools.** The site follows MoufTools' style: [`alexmouf-work/mouftools`](https://github.com/alexmouf-work/mouftools),
-  a single page of translucent glass panels over an all-CSS sunset sea.
-- **Borrows from Lemma where it saves time.** [`alexmouf-work/lemma`](https://github.com/alexmouf-work/lemma) already
-  has pieces this site needs. These are candidates, not decisions:
-  - Google sign-in through Supabase Auth (`src/auth/google.ts`, `src/auth/supabaseClient.ts`, `src/ui/GoogleButton.tsx`).
-  - Its public quiz index: public to read, writable when signed in. That is the same shape as this site.
-  - Design tokens and small UI parts (`src/styles/tokens.css`, `src/ui/Btn.tsx`, `Header.tsx`, `Icon.tsx`, `Spinner.tsx`).
-  - Its habit of keeping every decision in one file (`decisions/DECISIONS.md`).
-- **Recipes stay Markdown.** The site will read and write the same Markdown files, so nothing written now is lost.
+A static website at **cooking.mouftools.com**, for one job: reading and following a recipe.
 
-**Open question for the build:** MoufTools has no build step and uses plain JavaScript. Lemma is Vite, React and
-TypeScript. Borrowing Lemma's parts means taking its stack; keeping MoufTools' simplicity means porting only the
-ideas.
+- **No sign-in of any kind.** Everything is public and read-only. Recipes are added by committing Markdown here.
+- **Calm, warm, simple and clean.** Its own look, not MoufTools': large readable type, plenty of space, two fonts only
+  (one for titles and subtitles, one for body text).
+- **Photos, and later videos, of the steps.** Each step has a slot for a photo or a short video, so they can be added
+  recipe by recipe without changing the layout.
+- **A cooking view:** one step at a time in large type, for a phone or tablet propped up in the kitchen.
+- **Recipes stay Markdown.** The site is built from the files in `recipes/`, so nothing written now is lost.
+
+Mock-up: https://claude.ai/artifact/2yBcy8oUc5vkdigyknTmm9
 
 ## Where things are
 
