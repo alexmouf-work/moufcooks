@@ -1,0 +1,432 @@
+<title>MoufCooks</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+/* Plan. Subject: a family cookbook; reader: a home cook at the hob, phone propped up; job: read and follow a recipe.
+   Layout: a deco facade. Symmetric and centred, stepped silhouettes for anything that holds a picture, vertical piers
+   beside the name, one sunburst over the entrance (the hero). That sunburst is the one bold thing; all else is quiet.
+   Type: Josefin Sans for titles (geometric, like lettering cut into a 1930s building), Literata for reading.
+   Motion: calm and premium. One curve, three durations, one drawn-in moment on arrival; the rest answers a tap. */
+:root {
+  --bg: #FAF6F0; --surface: #FFFFFF; --band: #F4E9DC; --ink: #2F2620; --ink-2: #4A3F36; --muted: #6A5D52;
+  --green: #4F6B54; --green-deep: #33483A; --on-green: #FFFFFF; --foot-ink: #DDE5D9;
+  --brass: #B79A5B; --brass-ink: #765820; --line: #E7DDD0; --photo: #EFE4D6; --photo-ink: #8A7867; --video: #3B332C;
+  --shade: 74 50 30;
+  --title: "Josefin Sans", "Century Gothic", "Avenir Next", Futura, sans-serif;
+  --body: Literata, Georgia, "Times New Roman", serif;
+  --ease: cubic-bezier(.4, 0, .2, 1); --quick: 160ms; --std: 320ms; --slow: 560ms;
+  --s: 14px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1E1A16; --surface: #29241F; --band: #25201B; --ink: #F3EEE6; --ink-2: #DCD3C6; --muted: #B5A898;
+  --green: #86AA8D; --green-deep: #24332A; --on-green: #14201A; --foot-ink: #C8D3C5;
+  --brass: #C9B27C; --brass-ink: #DCC48D; --line: #40382F; --photo: #332C25; --photo-ink: #A39481; --video: #14110E;
+  --shade: 0 0 0; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1E1A16; --surface: #29241F; --band: #25201B; --ink: #F3EEE6; --ink-2: #DCD3C6; --muted: #B5A898;
+  --green: #86AA8D; --green-deep: #24332A; --on-green: #14201A; --foot-ink: #C8D3C5;
+  --brass: #C9B27C; --brass-ink: #DCC48D; --line: #40382F; --photo: #332C25; --photo-ink: #A39481; --video: #14110E;
+  --shade: 0 0 0; color-scheme: dark }
+
+html { font-size: 100%; scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.1875rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+*, *::before, *::after { box-sizing: border-box; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: var(--green); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.serif { font-family: var(--title); }
+.caps { text-transform: uppercase; letter-spacing: .18em; }
+
+/* ---- deco shapes ---- */
+.stepped { clip-path: polygon(0 calc(2*var(--s)), var(--s) calc(2*var(--s)), var(--s) var(--s), calc(2*var(--s)) var(--s), calc(2*var(--s)) 0, calc(100% - 2*var(--s)) 0, calc(100% - 2*var(--s)) var(--s), calc(100% - var(--s)) var(--s), calc(100% - var(--s)) calc(2*var(--s)), 100% calc(2*var(--s)), 100% calc(100% - 2*var(--s)), calc(100% - var(--s)) calc(100% - 2*var(--s)), calc(100% - var(--s)) calc(100% - var(--s)), calc(100% - 2*var(--s)) calc(100% - var(--s)), calc(100% - 2*var(--s)) 100%, calc(2*var(--s)) 100%, calc(2*var(--s)) calc(100% - var(--s)), var(--s) calc(100% - var(--s)), var(--s) calc(100% - 2*var(--s)), 0 calc(100% - 2*var(--s))); }
+.stepped-top { clip-path: polygon(0 calc(2*var(--s)), var(--s) calc(2*var(--s)), var(--s) var(--s), calc(2*var(--s)) var(--s), calc(2*var(--s)) 0, calc(100% - 2*var(--s)) 0, calc(100% - 2*var(--s)) var(--s), calc(100% - var(--s)) var(--s), calc(100% - var(--s)) calc(2*var(--s)), 100% calc(2*var(--s)), 100% 100%, 0 100%); }
+.chamfer { clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); }
+.rule2 { border: 0; height: 5px; border-block: 1px solid var(--brass); margin: 0; }
+.orn { color: var(--brass); display: block; }
+.orn path { stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: square; }
+
+/* ---- header / footer ---- */
+.topbar { height: 10px; background: var(--green); border-bottom: 2px solid var(--brass); box-shadow: inset 0 -5px 0 var(--bg), inset 0 -6px 0 var(--green); }
+.masthead { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 22px); padding-block: 26px 22px; }
+.masthead a { font-family: var(--title); font-weight: 600; font-size: clamp(1.5rem, 5vw, 2.3rem); line-height: 1; padding-top: .18em; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+.masthead svg { flex: none; width: clamp(40px, 10vw, 70px); height: 30px; }
+.foot { margin-top: 72px; background: var(--green-deep); color: #F3EEE6; text-align: center; }
+.foot .wrap { padding-block: 38px 44px; display: grid; justify-items: center; gap: 10px; }
+.foot .name { font-family: var(--title); font-weight: 600; font-size: 1.4rem; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; }
+.foot .addr { font-size: 1rem; letter-spacing: .06em; color: var(--foot-ink); }
+.foot .orn { color: #C9B27C; }
+
+/* ---- buttons ---- */
+.btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: .2em 30px 0; font-family: var(--title); border: 0; background: none; cursor: pointer; text-decoration: none; color: var(--on-green); font-weight: 600; font-size: 1.0625rem; letter-spacing: .14em; text-transform: uppercase; transition: transform var(--quick) var(--ease); }
+.btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--green); clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); transition: filter var(--quick) var(--ease); }
+.btn:hover::before { filter: brightness(1.12); }
+.btn:active { transform: scale(.97); }
+.btn svg { width: 20px; height: 20px; transition: transform var(--std) var(--ease); }
+.btn:hover svg.go { transform: translateX(4px); }
+.btn.ghost { color: var(--green); }
+.btn.ghost::before { background: var(--surface); box-shadow: inset 0 0 0 2px var(--green); clip-path: none; }
+.btn[disabled] { opacity: .4; cursor: default; }
+.chip { min-height: 48px; padding: .2em 22px 0; font-family: var(--title); border: 1.5px solid var(--green); border-radius: 0; background: var(--surface); color: var(--green); cursor: pointer; font-size: 1.0625rem; font-weight: 600; letter-spacing: .03em; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 4px var(--green); transition: background var(--std) var(--ease), color var(--std) var(--ease), box-shadow var(--std) var(--ease), transform var(--quick) var(--ease); }
+.chip:active { transform: scale(.97); }
+.chip[aria-pressed="true"] { background: var(--green); color: var(--on-green); box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 4px var(--brass); }
+
+/* ---- photo slots ---- */
+.ph { display: grid; place-items: center; align-content: center; gap: 8px; aspect-ratio: 4 / 3; max-width: 100%; background-color: var(--photo); background-image: repeating-conic-gradient(from -90deg at 50% 100%, transparent 0 7deg, rgb(var(--shade) / .05) 7deg 8deg); color: var(--muted); font-size: 1rem; text-align: center; }
+.ph svg { width: 36px; height: 36px; stroke: var(--photo-ink); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.ph.video { background-color: var(--video); background-image: none; color: #F3EEE6; }
+.ph.video svg { stroke: #F3EEE6; width: 46px; height: 46px; }
+.frame { padding: 2px; background: var(--brass); filter: none; }
+.frame > div { padding: 10px; background: var(--surface); }
+.lift { filter: drop-shadow(0 14px 16px rgb(var(--shade) / .2)); }
+
+/* ---- home ---- */
+.hero { position: relative; overflow: clip; background: var(--band); border-block: 1px solid var(--brass); box-shadow: inset 0 4px 0 var(--band), inset 0 5px 0 var(--brass), inset 0 -4px 0 var(--band), inset 0 -5px 0 var(--brass); }
+.hero .shot { position: relative; }
+.hero .burst { position: absolute; left: 50%; top: 50%; width: 230%; aspect-ratio: 1; transform: translate(-50%, -50%); z-index: 0; color: var(--brass); opacity: .75; pointer-events: none; -webkit-mask-image: radial-gradient(circle, #000 28%, transparent 62%); mask-image: radial-gradient(circle, #000 28%, transparent 62%); }
+.hero .shot .lift { position: relative; z-index: 1; }
+.hero .burst line { stroke: currentColor; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw var(--slow) var(--ease) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero .wrap { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 52px; padding-block: 56px; }
+.hero .copy { flex: 1 1 380px; min-width: 0; display: grid; gap: 16px; justify-items: start; }
+.hero .shot { flex: 1 1 380px; min-width: 0; }
+.kind { font-style: italic; font-size: 1.15rem; color: var(--brass-ink); }
+h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: .01em; text-wrap: balance; }
+.lede { font-size: 1.3rem; color: var(--ink-2); max-width: 34em; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--ink-2); }
+.meta span { display: inline-flex; align-items: center; gap: 8px; }
+.meta svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.section-head { display: grid; justify-items: center; gap: 14px; text-align: center; padding-block: 56px 28px; }
+.section-head h2 { font-family: var(--title); font-weight: 600; font-size: 1.85rem; line-height: 1.15; letter-spacing: .18em; padding-left: .18em; text-transform: uppercase; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-bottom: 36px; }
+.grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
+.grid li { flex: 1 1 300px; max-width: 338px; display: flex; }
+.card { flex: 1; display: block; color: var(--ink); text-decoration: none; --s: 12px; filter: drop-shadow(0 10px 12px rgb(var(--shade) / .14)); transition: transform var(--std) var(--ease), filter var(--std) var(--ease); }
+.card:hover { transform: translateY(-5px); filter: drop-shadow(0 20px 18px rgb(var(--shade) / .2)); }
+.card:active { transform: translateY(-1px) scale(.99); }
+.card .frame, .card .frame > div { height: 100%; }
+.card .frame > div { padding: 0; display: flex; flex-direction: column; }
+.card .body { flex: 1; display: grid; justify-items: center; align-content: start; gap: 10px; padding: 22px 24px 26px; text-align: center; }
+.card h3 { font-family: var(--title); font-weight: 600; font-size: 1.6rem; line-height: 1.22; text-wrap: balance; }
+.card p { color: var(--ink-2); }
+.card .meta { justify-content: center; font-size: 1.0625rem; margin-top: 6px; }
+.card .meta svg { width: 18px; height: 18px; }
+
+/* ---- recipe ---- */
+.back { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; margin-top: 4px; padding-top: .2em; font-family: var(--title); font-weight: 600; font-size: 1.0625rem; letter-spacing: .03em; text-decoration: none; }
+.back svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--std) var(--ease); }
+.back:hover svg { transform: translateX(-4px); }
+.r-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 28px 52px; padding-block: 20px 48px; }
+.r-hero .copy { flex: 1 1 400px; min-width: 0; display: grid; gap: 16px; justify-items: start; }
+.r-hero .shot { flex: 1 1 360px; min-width: 0; }
+.seg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; position: relative; border: 1.5px solid var(--green); background: var(--surface); padding: 3px; }
+.seg button { position: relative; z-index: 1; min-height: 44px; padding: .2em 22px 0; border: 0; background: none; cursor: pointer; font-family: var(--title); font-size: 1.0625rem; font-weight: 600; letter-spacing: .03em; color: var(--green); transition: color var(--std) var(--ease); }
+.seg button[aria-pressed="true"] { color: var(--on-green); }
+.seg .thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); background: var(--green); box-shadow: inset 0 0 0 1px var(--green), inset 0 0 0 2px var(--brass); transition: transform var(--std) var(--ease); }
+.seg[data-v="elevated"] .thumb { transform: translateX(100%); }
+.cols { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px; }
+.need { flex: 1 1 300px; min-width: 0; position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; background: var(--surface); border: 1px solid var(--brass); outline: 1px solid var(--brass); outline-offset: 4px; padding: 26px 26px 28px; display: grid; gap: 20px; }
+.need h2, .method h2 { font-family: var(--title); font-weight: 600; font-size: 1.35rem; letter-spacing: .16em; text-transform: uppercase; }
+.need h3 { font-family: var(--title); font-weight: 600; font-size: 1.15rem; letter-spacing: .04em; color: var(--brass-ink); padding-bottom: 6px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.need label { display: flex; gap: 14px; align-items: flex-start; min-height: 44px; padding-block: 6px; cursor: pointer; }
+.need input { appearance: none; flex: none; width: 24px; height: 24px; margin: 3px 0 0; border: 1.5px solid var(--green); background: var(--surface); cursor: pointer; display: grid; place-items: center; transition: background var(--quick) var(--ease); }
+.need input::after { content: ""; width: 12px; height: 7px; border-left: 2.5px solid var(--on-green); border-bottom: 2.5px solid var(--on-green); transform: translateY(-1px) rotate(-45deg) scale(0); transition: transform var(--std) var(--ease); }
+.need input:checked { background: var(--green); }
+.need input:checked::after { transform: translateY(-1px) rotate(-45deg) scale(1); }
+.need label span { transition: color var(--std) var(--ease); background: linear-gradient(currentColor, currentColor) no-repeat 0 55% / 0 1.5px; }
+.need input:checked + span { color: var(--muted); background-size: 100% 1.5px; transition: color var(--std) var(--ease), background-size var(--std) var(--ease); }
+.need .clear { justify-self: start; min-height: 44px; font-family: var(--title); padding: 0; border: 0; background: none; color: var(--green); cursor: pointer; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 760px) { .need { position: static; max-height: none; overflow: visible; } }
+.method { flex: 999 1 520px; min-width: 0; display: grid; gap: 26px; }
+.phase { display: flex; align-items: center; gap: 16px; font-family: var(--title); font-weight: 600; font-size: 1.15rem; letter-spacing: .04em; color: var(--brass-ink); padding-top: 8px; }
+.phase::after { content: ""; flex: 1; height: 5px; border-block: 1px solid var(--brass); }
+.step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 26px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+.num { flex: none; width: 48px; height: 48px; display: grid; place-items: center; padding-top: .16em; background: var(--green); color: var(--on-green); font-family: var(--title); font-weight: 600; font-size: 1.35rem; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
+.step .main { flex: 1; min-width: 0; display: grid; gap: 14px; }
+.step h3 { font-family: var(--title); font-weight: 600; font-size: 1.5rem; line-height: 1.3; padding-top: 6px; text-wrap: balance; }
+.prose { display: grid; gap: 10px; max-width: 40em; }
+.prose ul { display: grid; gap: 8px; padding-left: 1.2em; list-style: square; }
+.prose li::marker { color: var(--brass); }
+.step .row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.step .row .prose { flex: 1 1 300px; }
+.step .row .ph { flex: 0 1 250px; --s: 8px; }
+.why { background: var(--band); border-block: 3px double var(--brass); padding: 14px 18px; font-size: 1.125rem; color: var(--ink-2); max-width: 40em; }
+.why .prose { gap: 8px; }
+.why h4 { margin: 0 0 4px; font-family: var(--title); font-weight: 600; font-size: 1.05rem; letter-spacing: .08em; color: var(--brass-ink); }
+.more { display: grid; gap: 12px; padding-top: 56px; max-width: 46em; margin-inline: auto; }
+.more h2 { justify-self: center; font-family: var(--title); font-weight: 600; font-size: 1.35rem; letter-spacing: .16em; text-transform: uppercase; }
+.more .orn { justify-self: center; margin-bottom: 12px; }
+.more details { background: var(--surface); border: 1px solid var(--brass); }
+.more summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: .2em 22px 0; cursor: pointer; list-style: none; font-family: var(--title); font-weight: 600; font-size: 1.25rem; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary svg { flex: none; width: 18px; height: 18px; margin-top: -.2em; stroke: var(--green); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--std) var(--ease); }
+.more details[open] summary svg { transform: rotate(180deg); }
+.more details .prose { padding: 4px 22px 22px; max-width: none; }
+.more details::details-content { block-size: 0; overflow: clip; transition: block-size var(--std) var(--ease), content-visibility var(--std) allow-discrete; }
+.more details[open]::details-content { block-size: auto; }
+:root { interpolate-size: allow-keywords; }
+.prose ol { display: grid; gap: 8px; padding-left: 1.4em; }
+.tbl { overflow-x: auto; }
+.tbl table { border-collapse: collapse; width: 100%; font-size: 1.0625rem; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); }
+.tbl th { font-family: var(--title); font-weight: 600; white-space: nowrap; }
+.tbl td:first-child { white-space: nowrap; font-weight: 600; }
+.why strong { color: var(--ink); }
+[data-hide] { display: none !important; }
+
+/* ---- cooking view ---- */
+.cook { min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); }
+.cook header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; border-bottom: 3px double var(--brass); }
+.cook header .t { font-family: var(--title); font-weight: 600; font-size: 1.3rem; padding-top: .2em; }
+.cook .x { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--brass); background: var(--surface); color: var(--ink); cursor: pointer; }
+.cook .x svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+.prog { padding-block: 16px 6px; display: grid; gap: 10px; }
+.prog .lbl { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font-weight: 600; color: var(--muted); font-size: 1.0625rem; }
+.prog .lbl em { font-style: italic; font-weight: 400; color: var(--brass-ink); }
+.ticks { display: flex; gap: 4px; align-items: flex-end; height: 14px; }
+.ticks i { flex: 1; height: 6px; background: var(--line); transition: background var(--std) var(--ease), height var(--std) var(--ease); }
+.ticks i.done { background: var(--green); }
+.ticks i.now { background: var(--brass); height: 14px; }
+.stage { flex: 1; display: grid; align-content: start; padding-block: 18px 28px; touch-action: pan-y; }
+.stage .slide { view-transition-name: cookstep; display: grid; gap: 18px; max-width: 760px; width: 100%; margin-inline: auto; }
+.stage h1 { font-size: clamp(1.75rem, 5vw, 2.4rem); }
+.stage .prose { font-size: clamp(1.3rem, 2.6vw, 1.5rem); line-height: 1.5; max-width: none; }
+.stage .ph { aspect-ratio: 16 / 9; --s: 10px; }
+.whybtn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: .2em 20px 0; font-family: var(--title); letter-spacing: .03em; border: 1.5px solid var(--green); background: var(--surface); color: var(--green); cursor: pointer; font-weight: 600; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 4px var(--green); }
+.whybtn svg { margin-top: -.2em; width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--std) var(--ease); }
+.whybtn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.fold { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--std) var(--ease); }
+.fold > div { overflow: hidden; }
+.fold.open { grid-template-rows: 1fr; }
+.cook nav { position: sticky; bottom: 0; background: var(--surface); border-top: 3px double var(--brass); padding-block: 14px calc(14px + env(safe-area-inset-bottom, 0px)); }
+.cook nav .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 800px; }
+.cook nav .btn { min-height: 62px; font-size: 1.125rem; }
+.awake { display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; color: var(--muted); }
+.awake::before { content: ""; width: 8px; height: 8px; background: var(--green); transform: rotate(45deg); }
+
+/* ---- motion: page changes ---- */
+::view-transition-old(root) { animation-duration: 200ms; animation-timing-function: var(--ease); }
+::view-transition-new(root) { animation-duration: var(--std); animation-timing-function: var(--ease); }
+::view-transition-group(*) { animation-duration: 440ms; animation-timing-function: var(--ease); }
+::view-transition-old(cookstep) { animation: out-l var(--std) var(--ease) both; }
+::view-transition-new(cookstep) { animation: in-r var(--std) var(--ease) both; }
+[data-dir="back"]::view-transition-old(cookstep) { animation-name: out-r; }
+[data-dir="back"]::view-transition-new(cookstep) { animation-name: in-l; }
+@keyframes out-l { to { opacity: 0; transform: translateX(-36px); } }
+@keyframes in-r { from { opacity: 0; transform: translateX(36px); } }
+@keyframes out-r { to { opacity: 0; transform: translateX(36px); } }
+@keyframes in-l { from { opacity: 0; transform: translateX(-36px); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<div id="app"></div>
+
+<script>
+const RECIPES = __DATA__;
+// Which steps have media in this prototype. On the real site a step gets a slot when a photo or video file exists for it.
+const MEDIA = { "beef-cheek-ragu": { 2: ["photo", "Roasted marrow bones"], 4: ["video", "Searing the cheeks"], 5: ["photo", "Brick-red tomato purée"], 15: ["photo", "The finished ragù"] } };
+const KINDS = ["All", "Slow cooking", "On the grill", "Noodles", "Drinks"];
+const app = document.getElementById("app");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+const bySlug = (s) => RECIPES.find((r) => r.slug === s);
+let kind = "All", homeScroll = 0, wake = null;
+
+const I = {
+  clock: '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  people: '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3.2 3.2 0 010 5.6"/><path d="M18 14.5c2 .9 3 2.9 3 5.5"/></svg>',
+  photo: '<svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/></svg>',
+  play: '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>',
+  go: '<svg class="go" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  back: '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+  start: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5l11 7-11 7z"/></svg>',
+  chev: '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>',
+  x: '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  fan: '<svg class="orn" aria-hidden="true" width="180" height="30" viewBox="0 0 180 30"><path d="M0 28h58M122 28h58"/><path d="M10 22h48M122 22h48"/><path d="M90 28V3M90 28L75 7M90 28l15-21M90 28L64 14M90 28l26-14M90 28L60 23M90 28l30-5"/><path d="M58 28h64"/></svg>',
+  pillars: '<svg class="orn" aria-hidden="true" viewBox="0 0 70 30"><path d="M5 29V20M15 29V14M25 29V8M35 29V2M45 29V8M55 29V14M65 29V20"/></svg>',
+  dia: '<svg class="orn" aria-hidden="true" width="90" height="10" viewBox="0 0 90 10"><path d="M2 5h30M58 5h30"/><path d="M45 1l4 4-4 4-4-4z"/></svg>'
+};
+const meta = (r) => `<div class="meta"><span>${I.clock}${r.time}</span><span>${I.people}${r.serves}</span></div>`;
+const slot = (kind, label, cls = "") => `<div class="ph stepped ${kind === "video" ? "video" : ""} ${cls}" role="img" aria-label="${kind === "video" ? "Video" : "Photo"} to come: ${label}">${kind === "video" ? I.play : I.photo}<span>${kind === "video" ? "Video" : "Photo"} to come</span></div>`;
+const shot = (r, name) => `<div class="lift"><div class="frame stepped"><div class="stepped">${slot("photo", r.title, name ? "" : "")}</div></div></div>`;
+
+function burst() {
+  let out = "";
+  const n = 48;
+  for (let i = 0; i < n; i++) {
+    const a = (360 / n) * i * Math.PI / 180;
+    out += `<line pathLength="1" x1="${(500 + Math.sin(a) * 120).toFixed(1)}" y1="${(500 - Math.cos(a) * 120).toFixed(1)}" x2="${(500 + Math.sin(a) * 500).toFixed(1)}" y2="${(500 - Math.cos(a) * 500).toFixed(1)}" style="animation-delay:${(i % 12) * 30}ms"/>`;
+  }
+  return `<svg class="burst" aria-hidden="true" viewBox="0 0 1000 1000" fill="none">${out}</svg>`;
+}
+const header = () => `<div class="topbar"></div><div class="wrap masthead">${I.pillars}<a href="#home">MoufCooks</a>${I.pillars}</div><hr class="rule2">`;
+const footer = () => `<footer class="foot"><hr class="rule2"><div class="wrap">${I.pillars.replace('class="orn"', 'class="orn" width="70" height="30"')}<span class="name">MoufCooks</span><span class="addr">cooking.mouftools.com</span></div></footer>`;
+
+function card(r, featured) {
+  return `<li><a class="card" href="#recipe-${r.slug}" style="view-transition-name: card-${r.slug}"><div class="frame stepped-top"><div class="stepped-top">
+    <div class="ph" ${featured ? "" : `style="view-transition-name: photo-${r.slug}"`} role="img" aria-label="Photo to come: ${r.title}">${I.photo}<span>Photo to come</span></div>
+    <div class="body"><p class="kind">${r.kind}</p><h3>${r.title}</h3>${I.dia}<p>${r.line}</p>${meta(r)}</div>
+  </div></div></a></li>`;
+}
+function home() {
+  const f = RECIPES[0];
+  const list = RECIPES.filter((r) => kind === "All" || r.kind === kind);
+  return `${header()}
+  <section class="hero"><div class="wrap">
+    <div class="copy"><p class="kind">Tried and loved</p><h1>${f.title}</h1>${I.fan}<p class="lede">${f.intro}</p>${meta(f)}
+      <a class="btn" href="#recipe-${f.slug}">Open the recipe</a></div>
+    <div class="shot">${burst()}<div style="view-transition-name: photo-${f.slug}; position: relative; z-index: 1">${shot(f)}</div></div>
+  </div></section>
+  <main class="wrap">
+    <div class="section-head"><h2>All recipes</h2>${I.fan}</div>
+    <div class="chips" role="group" aria-label="Show recipes by kind">${KINDS.map((k) => `<button class="chip" type="button" data-kind="${k}" aria-pressed="${k === kind}">${k}</button>`).join("")}</div>
+    <ul class="grid">${list.map((r) => card(r, r === f)).join("")}</ul>
+  </main>${footer()}`;
+}
+
+function recipe(r) {
+  const hasVersions = r.steps.some((s) => /<li><strong>(Same day|Elevated):/.test(s.text));
+  const v = store.get("version", "same");
+  const m = MEDIA[r.slug] || {};
+  let phase = null;
+  const steps = r.steps.map((s) => {
+    const head = s.phase && s.phase !== phase ? `<p class="phase">${s.phase}</p>` : "";
+    phase = s.phase;
+    const media = m[s.n] ? slot(m[s.n][0], m[s.n][1]) : "";
+    return `${head}<article class="step" id="step-${s.n}"><div class="num" aria-hidden="true">${s.n}</div><div class="main">
+      <h3>${s.title}</h3><div class="row"><div class="prose">${s.text}</div>${media}</div>
+      ${s.why ? `<div class="why"><h4>Why</h4><div class="prose">${s.why}</div></div>` : ""}</div></article>`;
+  }).join("");
+  const ticked = store.get("ticks-" + r.slug, []);
+  let n = 0;
+  const groups = r.groups.map((g) => `<div><h3>${g.name}</h3>${g.items.map((it) => { const id = n++; return `<label><input type="checkbox" id="ing-${id}" data-i="${id}" ${ticked.includes(id) ? "checked" : ""}><span>${it}</span></label>`; }).join("")}</div>`).join("");
+  return `${header()}
+  <main class="wrap" data-v="${v}">
+    <a class="back" href="#home">${I.back}All recipes</a>
+    <section class="r-hero">
+      <div class="copy"><p class="kind">${r.kind}</p><h1>${r.title}</h1>${I.fan}<p class="lede">${r.intro}</p>${meta(r)}
+        ${hasVersions ? `<div class="seg" role="group" aria-label="Version" data-v="${v === "elevated" ? "elevated" : "same"}"><span class="thumb"></span><button type="button" data-ver="same" aria-pressed="${v !== "elevated"}">Same day</button><button type="button" data-ver="elevated" aria-pressed="${v === "elevated"}">Elevated</button></div>` : ""}
+        <a class="btn" href="#cook-${r.slug}">${I.start}Start cooking</a></div>
+      <div class="shot" style="view-transition-name: photo-${r.slug}">${shot(r)}</div>
+    </section>
+    <div class="cols">
+      <aside class="need"><h2>What you need</h2>${groups}<button class="clear" type="button">Untick everything</button></aside>
+      <section class="method"><h2>Method</h2>${steps}</section>
+    </div>
+    ${r.extras.length ? `<section class="more"><h2>More about this recipe</h2>${I.fan}${r.extras.map((x) => `<details><summary>${x.name}${I.chev}</summary><div class="prose">${x.html}</div></details>`).join("")}</section>` : ""}
+  </main>${footer()}`;
+}
+// Show only the chosen version's lines where a step gives both.
+function applyVersion(root) {
+  const v = store.get("version", "same");
+  root.querySelectorAll(".prose li").forEach((li) => {
+    const m = /^<strong>(Same day|Elevated):<\/strong>/.exec(li.innerHTML.trim());
+    if (!m) return;
+    const mine = (m[1] === "Elevated") === (v === "elevated");
+    li.toggleAttribute("data-hide", !mine);
+  });
+}
+
+function cook(r) {
+  const i = Math.min(Math.max(store.get("at-" + r.slug, 0), 0), r.steps.length - 1);
+  const s = r.steps[i];
+  const m = (MEDIA[r.slug] || {})[s.n];
+  const last = i === r.steps.length - 1;
+  return `<div class="cook">
+    <div class="wrap"><header><span class="t">${r.title}</span><a class="x" href="#recipe-${r.slug}" aria-label="Close the cooking view">${I.x}</a></header>
+      <div class="prog"><div class="lbl"><span>Step ${s.n} of ${r.steps.length}</span>${s.phase ? `<em>${s.phase}</em>` : ""}</div>
+        <div class="ticks" aria-hidden="true">${r.steps.map((_, k) => `<i class="${k < i ? "done" : k === i ? "now" : ""}"></i>`).join("")}</div></div></div>
+    <div class="stage wrap"><div class="slide">
+      ${m ? slot(m[0], m[1]) : ""}
+      <h1>${s.title}</h1><div class="prose">${s.text}</div>
+      ${s.why ? `<button class="whybtn" type="button" aria-expanded="false" aria-controls="why">Why this step ${I.chev}</button><div class="fold" id="why"><div><div class="why"><div class="prose">${s.why}</div></div></div></div>` : ""}
+    </div></div>
+    <nav aria-label="Steps"><div class="wrap">
+      <button class="btn ghost" type="button" data-go="-1" ${i === 0 ? "disabled" : ""}>Back</button>
+      ${last ? `<a class="btn" href="#recipe-${r.slug}">Finish</a>` : `<button class="btn" type="button" data-go="1">Next</button>`}
+    </div></nav></div>`;
+}
+
+function route() {
+  const h = location.hash.slice(1);
+  const m = /^(recipe|cook)-(.+)$/.exec(h);
+  const r = m && bySlug(m[2]);
+  return r ? { view: m[1], r } : { view: "home" };
+}
+function render() {
+  const { view, r } = route();
+  app.innerHTML = view === "home" ? home() : view === "recipe" ? recipe(r) : cook(r);
+  app.dataset.view = view;
+  if (view !== "home") applyVersion(app);
+  if (view === "cook") keepAwake(); else letSleep();
+  document.title = view === "home" ? "MoufCooks" : r.title;
+}
+function change(fn, dir) {
+  if (!document.startViewTransition || reduce.matches) { fn(); return; }
+  if (dir) document.documentElement.dataset.dir = dir;
+  document.startViewTransition(fn).finished.finally(() => { delete document.documentElement.dataset.dir; });
+}
+async function keepAwake() {
+  try { if (!wake && navigator.wakeLock) { wake = await navigator.wakeLock.request("screen"); wake.addEventListener("release", () => { wake = null; }); } } catch (e) { wake = null; }
+  const lbl = app.querySelector(".prog .lbl");
+  if (wake && lbl && !lbl.querySelector(".awake")) lbl.insertAdjacentHTML("beforeend", '<span class="awake">Screen stays on</span>');
+}
+function letSleep() { if (wake) { wake.release().catch(() => {}); wake = null; } }
+function stepBy(d) {
+  const { view, r } = route();
+  if (view !== "cook") return;
+  const i = store.get("at-" + r.slug, 0), n = Math.min(Math.max(i + d, 0), r.steps.length - 1);
+  if (n === i) return;
+  store.set("at-" + r.slug, n);
+  change(render, d < 0 ? "back" : "fwd");
+}
+
+let lastView = route().view;
+addEventListener("hashchange", () => {
+  const next = route().view;
+  if (lastView === "home") homeScroll = scrollY;
+  change(() => { render(); scrollTo(0, next === "home" ? homeScroll : 0); });
+  lastView = next;
+});
+app.addEventListener("click", (e) => {
+  const chip = e.target.closest("[data-kind]");
+  if (chip) { kind = chip.dataset.kind; change(render); return; }
+  const ver = e.target.closest("[data-ver]");
+  if (ver) {
+    store.set("version", ver.dataset.ver);
+    const seg = ver.closest(".seg");
+    seg.dataset.v = ver.dataset.ver;
+    seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === ver));
+    change(() => applyVersion(app));
+    return;
+  }
+  if (e.target.closest(".clear")) { const { r } = route(); store.set("ticks-" + r.slug, []); app.querySelectorAll(".need input").forEach((c) => { c.checked = false; }); return; }
+  const go = e.target.closest("[data-go]");
+  if (go) { stepBy(+go.dataset.go); return; }
+  const why = e.target.closest(".whybtn");
+  if (why) { const open = why.getAttribute("aria-expanded") !== "true"; why.setAttribute("aria-expanded", open); document.getElementById("why").classList.toggle("open", open); }
+});
+app.addEventListener("change", (e) => {
+  if (!e.target.matches(".need input")) return;
+  const { r } = route();
+  store.set("ticks-" + r.slug, [...app.querySelectorAll(".need input:checked")].map((c) => +c.dataset.i));
+});
+addEventListener("keydown", (e) => { if (e.key === "ArrowRight") stepBy(1); else if (e.key === "ArrowLeft") stepBy(-1); });
+let sx = null, sy = 0;
+app.addEventListener("pointerdown", (e) => { if (e.target.closest(".stage")) { sx = e.clientX; sy = e.clientY; } });
+app.addEventListener("pointerup", (e) => {
+  if (sx == null) return;
+  const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) stepBy(dx < 0 ? 1 : -1);
+});
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && route().view === "cook") keepAwake(); });
+render();
+</script>
