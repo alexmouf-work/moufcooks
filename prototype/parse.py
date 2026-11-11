@@ -8,11 +8,11 @@ from pathlib import Path
 # What the Markdown doesn't carry yet: a kind, a card line and short meta. In the real build these move into
 # front matter at the top of each recipe file.
 EXTRA = {
-    "beef-cheek-ragu": ("Slow cooking", "Slow-braised beef cheek in red wine and tomato, with roasted bone marrow.", "About 7 hours", "Serves 6–8"),
-    "coq-au-vin": ("Slow cooking", "Chicken braised in red wine and cognac, with crisp skin and pickled shallots.", "About 5 hours", "Serves 6–8"),
-    "chilli-miso-ramen": ("Noodles", "Creamy chilli miso broth, crisp chicken and soy eggs.", "About 3 hours", "Serves 4"),
-    "spatchcock-chicken-kettle": ("On the grill", "A whole chicken roasted over charcoal, with crisp golden skin.", "About 3½ hours", "Serves 4"),
-    "pumpkin-spice-syrup": ("Drinks", "A spiced syrup made with real pumpkin, for lattes in minutes.", "About 1 hour", "Makes 350 ml"),
+    "beef-cheek-ragu": ("Slow cooking", "Slow-braised beef cheek in red wine and tomato, with roasted bone marrow.", "About 7 hours", "Serves 6–8", 6, "people"),
+    "coq-au-vin": ("Slow cooking", "Chicken braised in red wine and cognac, with crisp skin and pickled shallots.", "About 5 hours", "Serves 6–8", 6, "people"),
+    "chilli-miso-ramen": ("Noodles", "Creamy chilli miso broth, crisp chicken and soy eggs.", "About 3 hours", "Serves 4", 4, "people"),
+    "spatchcock-chicken-kettle": ("On the grill", "A whole chicken roasted over charcoal, with crisp golden skin.", "About 3½ hours", "Serves 4", 4, "people"),
+    "pumpkin-spice-syrup": ("Drinks", "A spiced syrup made with real pumpkin, for lattes in minutes.", "About 1 hour", "Makes 350 ml", 10, "lattes"),
 }
 ORDER = list(EXTRA)
 
@@ -160,9 +160,9 @@ def parse(path):
     skip = ("Shopping list", "Cook's notes")
     extras = [{"name": n, "html": blocks([l for l in b if not l.startswith("### ")])} for n, b in sections.items()
               if n not in skip and not n.startswith("Method")]
-    kind, line, time, serves = EXTRA[slug]
+    kind, line, time, serves, base, unit = EXTRA[slug]
     return {"slug": slug, "title": title, "intro": inline(" ".join(intro)), "kind": kind, "line": line, "time": time,
-            "serves": serves, "groups": groups, "steps": steps, "extras": extras}
+            "serves": serves, "base": base, "unit": unit, "groups": groups, "steps": steps, "extras": extras}
 
 
 if __name__ == "__main__":

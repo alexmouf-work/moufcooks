@@ -16,7 +16,8 @@ propped up in the kitchen, with wet or floury hands, glancing between the pan an
 - Simple is not bare: "give the site more detailing and make it prettier."
 - Detailing in the manner of "art-deco architecture": sunbursts, stepped (ziggurat) silhouettes, chevrons, strong
   vertical lines, symmetry, double inlay lines, brass against stone.
-- "The green colour is excellent": sage green `#4F6B54` stays as the main colour.
+- "Make it deep red rather than green": oxblood red `#7A1F2B` is the main colour, with brass on warm ivory. (This
+  replaces the sage green of the first mock-ups.)
 - No logo mark. The name is set in type.
 - "Don't use more than two fonts total. One for body text and the other for titles and subtitles."
 - "Make it feel *sexy* in terms of how smooth it is to use": every tap answers at once, pages flow into each other,
@@ -24,10 +25,12 @@ propped up in the kitchen, with wet or floury hands, glancing between the pan an
 
 ## What it must do
 1. **Home:** show every recipe with its photo, name, time and servings; let the reader narrow by kind.
-2. **Recipe page:** the intro, what you need (tickable while shopping or cooking), and the method as numbered steps,
-   each with its "why". Where a recipe has two versions, **same day** and **elevated**, the reader switches between them.
-3. **Cooking view:** one step at a time in large type, with Back and Next, progress, swipe and arrow keys. The screen
-   stays awake. Leaving and coming back returns to the same step.
+2. **The recipe, page by page:** "don't make it a scrollable thing, instead make it a page-by-page thing with arrows
+   to progress or return", with "nice appropriate animations between each step". The pages are: the recipe itself,
+   what you need (tickable while shopping or cooking), each step with its "why", then serving, leftovers and notes.
+   Swipe and arrow keys work too. The screen stays awake, and coming back returns to the same page.
+3. **Any number of people:** "add sliders for the number of people". A slider reworks every amount. Where a recipe has
+   two versions, **same day** and **elevated**, the reader switches between them.
 4. **Photos, and later videos, of the steps:** "we may show photographs or later even videos of the steps, so be sure
    to prepare for that." Each step has a slot that appears when a photo or video exists for it, and the page looks
    finished without any.
