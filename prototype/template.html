@@ -32,6 +32,8 @@
   --shade: 0 0 0; color-scheme: dark }
 
 html { font-size: 100%; }
+* { scrollbar-width: none; -ms-overflow-style: none; }
+*::-webkit-scrollbar { display: none; }
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.1875rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 *, *::before, *::after { box-sizing: border-box; }
 h1, h2, h3, h4, p, ul, ol { margin: 0; }
@@ -129,14 +131,16 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .bar a:hover svg { transform: translateX(-4px); }
 .bar .t { flex: 1; text-align: center; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--title); font-weight: 600; font-size: 1.15rem; padding-top: .2em; color: var(--muted); }
 .prog { padding-block: 12px 4px; display: grid; gap: 8px; }
-.prog .lbl { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; font-weight: 600; color: var(--muted); font-size: 1.0625rem; }
-.prog .lbl em { font-style: normal; font-weight: 400; color: var(--brass-ink); }
+.prog .lbl { display: flex; flex-wrap: nowrap; white-space: nowrap; justify-content: space-between; gap: 2px 16px; font-weight: 600; color: var(--muted); font-size: 1.0625rem; }
+.prog .lbl span { flex: none; }
+.prog .lbl em { font-style: normal; font-weight: 400; color: var(--brass-ink); min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .ticks { display: flex; gap: 4px; align-items: flex-end; height: 14px; }
 .ticks i { flex: 1; height: 6px; background: var(--line); transition: background var(--std) var(--ease), height var(--std) var(--ease); }
 .ticks i.done { background: var(--accent); }
 .ticks i.now { background: var(--brass); height: 14px; }
-.stage { view-transition-name: bookpage; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: grid; touch-action: pan-y; }
-.page { align-self: start; width: 100%; max-width: 1080px; margin-inline: auto; padding-block: 20px 28px; }
+.stage { view-transition-name: bookpage; flex: 1; min-height: 0; overflow: hidden; display: grid; grid-template-rows: minmax(0, 1fr); touch-action: pan-y; }
+/* Every page of a recipe is the same box: the full stage. A page that holds more than fits scrolls inside it. */
+.page { align-self: stretch; height: 100%; min-height: 0; overflow-y: auto; overscroll-behavior: contain; width: 100%; max-width: 1080px; margin-inline: auto; padding-block: 20px 28px; }
 .pager { background: var(--surface); border-top: 1px solid var(--brass); padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); }
 .pager .wrap { display: grid; grid-template-columns: auto 1fr; gap: 12px; }
 .pager .btn { min-height: 62px; font-size: 1.3rem; }
@@ -215,11 +219,11 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .fold > div { overflow: hidden; }
 .fold.open { grid-template-rows: 1fr; }
 @media (min-width: 700px) {
-  .page:has(.steppage.media) { align-self: stretch; display: grid; }
+  .page:has(.steppage.media) { display: grid; }
   .steppage.media { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .steppage.media .main { align-self: start; }
   .steppage.media .side .ph { aspect-ratio: auto; height: 100%; min-height: 300px; }
-  .page:has(.cover) { align-self: stretch; display: grid; }
+  .page:has(.cover) { display: grid; }
   .cover { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 0 52px; }
   .cover .copy { align-self: center; }
   .cover .shot, .cover .shot .lift, .cover .shot .frame, .cover .shot .frame > div { height: 100%; }
@@ -231,7 +235,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .whydrop .why .prose { max-width: 60em; }
 [data-hide] { display: none !important; }
 
-.more { display: grid; gap: 12px; max-width: 46em; margin-inline: auto; }
+.more { display: grid; gap: 12px; }
 .more h1 { justify-self: center; text-align: center; font-size: clamp(1.9rem, 5vw, 2.6rem); }
 .more .orn { justify-self: center; margin-bottom: 10px; }
 .more details { background: var(--surface); border: 1px solid var(--brass); }
@@ -465,7 +469,7 @@ function turn(d) {
   const i = Math.min(at(r), pages(r).length - 1), n = Math.min(Math.max(i + d, 0), pages(r).length - 1);
   if (n === i) return;
   at(r, n);
-  change(() => { render(); const st = app.querySelector(".stage"); if (st) st.scrollTop = 0; }, d < 0 ? "back" : "fwd");
+  change(() => { render(); const st = app.querySelector(".stage");  }, d < 0 ? "back" : "fwd");
 }
 function setPeople(r, p) {
   const [min, max] = range(r);
