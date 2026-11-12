@@ -5,7 +5,8 @@ judge the look and the feel before the real build is planned.
 
 - `parse.py` reads the recipes in `../recipes/` into the data the page uses.
 - `template.html` is the whole page: styles, markup and behaviour.
-- `python3 build.py ../recipes` writes `out/MoufCooks.html` (the page) and `out/preview.html` (the same, wrapped so a
-  browser can open it directly).
+- `python3 build.py` writes `../index.html`, the complete page the host serves from the root of the repository. It also
+  writes `out/MoufCooks.html` and `out/preview.html`, working copies that are not committed.
+- After changing a recipe or the template, run it again and commit `index.html`.
 
 Published copy: https://claude.ai/artifact/Ke8cXbHCit7ksRYd7xwwk2

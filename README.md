@@ -2,7 +2,8 @@
 
 A family recipe book. Alexander and their family each add the recipes they cook, and anyone can read them.
 
-**Status:** a folder of Markdown recipes for now. The website below is mocked up, not built.
+**Status:** a folder of Markdown recipes, and a working prototype of the website. The host serves `index.html` at the
+root of this repository; it is generated, so change `prototype/` or a recipe and rebuild rather than editing it.
 
 ## The plan
 
@@ -23,6 +24,8 @@ Mock-up: https://claude.ai/artifact/2yBcy8oUc5vkdigyknTmm9
 | Path | What it is |
 |---|---|
 | [`recipes/`](recipes/) | One Markdown file per recipe. Unsorted for now; it will be organised later. |
+| [`index.html`](index.html) | The site as deployed. Generated: run `python3 prototype/build.py` after changing a recipe or the prototype. |
+| [`prototype/`](prototype/) | What the site is generated from. |
 
 ## Adding a recipe (for now)
 
