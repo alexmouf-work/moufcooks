@@ -1,6 +1,6 @@
 <title>MoufCooks</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
 <style>
 /* Plan. Subject: a family cookbook; reader: a home cook at the hob, phone propped up; job: read and follow a recipe.
    Layout: a deco facade. Symmetric and centred, stepped silhouettes for anything that holds a picture, vertical piers
@@ -38,6 +38,7 @@ h1, h2, h3, h4, p, ul, ol { margin: 0; }
 ul { padding: 0; list-style: none; }
 a { color: var(--accent-ink); }
 button { font: inherit; color: inherit; }
+em, i { font-style: normal; }
 :focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; }
 .wrap { max-width: 1120px; margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 
@@ -49,10 +50,17 @@ button { font: inherit; color: inherit; }
 .orn path { stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: square; }
 
 /* ---- masthead / footer (home) ---- */
-.topbar { height: 10px; background: var(--accent); border-bottom: 2px solid var(--brass); box-shadow: inset 0 -5px 0 var(--bg), inset 0 -6px 0 var(--accent); }
-.masthead { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 22px); padding-block: 26px 22px; }
+.topbar { height: 8px; background: var(--accent); }
+.masthead { position: relative; display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 22px); padding-block: 26px 22px; }
+.theme { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--brass); background: var(--surface); color: var(--accent-ink); cursor: pointer; transition: background var(--quick) var(--ease), transform var(--quick) var(--ease); }
+.theme:hover { background: var(--band); }
+.theme:active { transform: scale(.94); }
+.theme svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.masthead .theme { position: absolute; top: 50%; right: max(20px, env(safe-area-inset-right, 0px)); transform: translateY(-50%); }
+.masthead .theme:active { transform: translateY(-50%) scale(.94); }
+@media (max-width: 560px) { .masthead { justify-content: flex-start; } .masthead .orn { display: none; } }
 .masthead a { font-family: var(--title); font-weight: 600; font-size: clamp(1.5rem, 5vw, 2.3rem); line-height: 1; padding-top: .18em; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
-.masthead svg { flex: none; width: clamp(40px, 10vw, 70px); height: 30px; }
+.masthead .orn { flex: none; width: clamp(40px, 10vw, 70px); height: 30px; }
 .foot { margin-top: 72px; background: var(--accent-deep); color: #F3EEE6; text-align: center; }
 .foot .wrap { padding-block: 38px 44px; display: grid; justify-items: center; gap: 10px; }
 .foot .name { font-family: var(--title); font-weight: 600; font-size: 1.4rem; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; }
@@ -60,7 +68,7 @@ button { font: inherit; color: inherit; }
 .foot .orn { color: #C9B27C; }
 
 /* ---- buttons ---- */
-.btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: .2em 30px 0; font-family: var(--title); border: 0; background: none; cursor: pointer; text-decoration: none; color: var(--on-accent); font-weight: 600; font-size: 1.0625rem; letter-spacing: .14em; text-transform: uppercase; transition: transform var(--quick) var(--ease); }
+.btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: .2em 30px 0; font-family: var(--title); border: 0; background: none; cursor: pointer; text-decoration: none; color: var(--on-accent); font-weight: 600; font-size: 1.25rem; letter-spacing: .02em; transition: transform var(--quick) var(--ease); }
 .btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--accent); clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); transition: filter var(--quick) var(--ease); }
 .btn:hover::before { filter: brightness(1.15); }
 .btn:active { transform: scale(.97); }
@@ -71,35 +79,33 @@ button { font: inherit; color: inherit; }
 .btn.ghost::before { background: var(--surface); box-shadow: inset 0 0 0 2px var(--accent-ink); clip-path: none; }
 .btn[disabled] { opacity: .35; cursor: default; }
 .btn[disabled] svg { transform: none !important; }
-.chip { min-height: 48px; padding: .2em 22px 0; font-family: var(--title); border: 1.5px solid var(--accent-ink); border-radius: 0; background: var(--surface); color: var(--accent-ink); cursor: pointer; font-size: 1.0625rem; font-weight: 600; letter-spacing: .03em; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 4px var(--accent-ink); transition: background var(--std) var(--ease), color var(--std) var(--ease), box-shadow var(--std) var(--ease), transform var(--quick) var(--ease); }
+.chip { min-height: 48px; padding: .2em 22px 0; font-family: var(--title); border: 1.5px solid var(--accent-ink); border-radius: 0; background: var(--surface); color: var(--accent-ink); cursor: pointer; font-size: 1.0625rem; font-weight: 600; letter-spacing: .03em; transition: background var(--std) var(--ease), color var(--std) var(--ease), transform var(--quick) var(--ease); }
 .chip:active { transform: scale(.97); }
-.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); box-shadow: inset 0 0 0 3px var(--accent), inset 0 0 0 4px var(--brass); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 
 /* ---- photo slots ---- */
-.ph { display: grid; place-items: center; align-content: center; gap: 8px; aspect-ratio: 4 / 3; max-width: 100%; background-color: var(--photo); background-image: repeating-conic-gradient(from -90deg at 50% 100%, transparent 0 7deg, rgb(var(--shade) / .05) 7deg 8deg); color: var(--muted); font-size: 1rem; text-align: center; }
+.ph { display: grid; place-items: center; align-content: center; gap: 8px; aspect-ratio: 4 / 3; max-width: 100%; background-color: var(--photo); color: var(--muted); font-size: 1rem; text-align: center; }
 .ph svg { width: 36px; height: 36px; stroke: var(--photo-ink); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.ph.video { background-color: var(--video); background-image: none; color: #F3EEE6; }
+.ph.video { background-color: var(--video); color: #F3EEE6; }
 .ph.video svg { stroke: #F3EEE6; width: 46px; height: 46px; }
 .frame { padding: 2px; background: var(--brass); }
 .frame > div { padding: 10px; background: var(--surface); }
 .lift { filter: drop-shadow(0 14px 16px rgb(var(--shade) / .2)); }
 
 /* ---- home ---- */
-.hero { position: relative; overflow: clip; background: var(--band); border-block: 1px solid var(--brass); box-shadow: inset 0 4px 0 var(--band), inset 0 5px 0 var(--brass), inset 0 -4px 0 var(--band), inset 0 -5px 0 var(--brass); }
-.hero .burst { position: absolute; left: 50%; top: 50%; width: 230%; aspect-ratio: 1; transform: translate(-50%, -50%); z-index: 0; color: var(--brass); opacity: .75; pointer-events: none; -webkit-mask-image: radial-gradient(circle, #000 28%, transparent 62%); mask-image: radial-gradient(circle, #000 28%, transparent 62%); }
-.hero .burst line { stroke: currentColor; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw var(--slow) var(--ease) forwards; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero { background: var(--band); border-bottom: 1px solid var(--brass); }
+
 .hero .wrap { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 52px; padding-block: 56px; }
 .hero .copy { flex: 1 1 380px; min-width: 0; display: grid; gap: 16px; justify-items: start; }
-.hero .shot { position: relative; flex: 1 1 380px; min-width: 0; }
-.kind { font-style: italic; font-size: 1.15rem; color: var(--brass-ink); }
+.hero .shot { flex: 1 1 380px; min-width: 0; }
+.kind { font-family: var(--title); font-weight: 600; font-size: 1.05rem; letter-spacing: .03em; padding-top: .2em; color: var(--brass-ink); }
 h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: .01em; text-wrap: balance; }
 .lede { font-size: 1.3rem; color: var(--ink-2); max-width: 34em; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--ink-2); }
 .meta span { display: inline-flex; align-items: center; gap: 8px; }
 .meta svg { width: 20px; height: 20px; stroke: var(--accent-ink); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .section-head { display: grid; justify-items: center; gap: 14px; text-align: center; padding-block: 56px 28px; }
-.section-head h2 { font-family: var(--title); font-weight: 600; font-size: 1.85rem; line-height: 1.15; letter-spacing: .18em; padding-left: .18em; text-transform: uppercase; }
+.section-head h2 { font-family: var(--title); font-weight: 600; font-size: 2.2rem; line-height: 1.15; letter-spacing: .01em; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-bottom: 36px; }
 .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
 .grid li { flex: 1 1 300px; max-width: 338px; display: flex; }
@@ -121,19 +127,19 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .bar a { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding-top: .2em; font-family: var(--title); font-weight: 600; font-size: 1.0625rem; letter-spacing: .03em; text-decoration: none; white-space: nowrap; }
 .bar a svg { width: 18px; height: 18px; margin-top: -.2em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--std) var(--ease); }
 .bar a:hover svg { transform: translateX(-4px); }
-.bar .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--title); font-weight: 600; font-size: 1.15rem; padding-top: .2em; color: var(--muted); }
+.bar .t { flex: 1; text-align: center; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--title); font-weight: 600; font-size: 1.15rem; padding-top: .2em; color: var(--muted); }
 .prog { padding-block: 12px 4px; display: grid; gap: 8px; }
 .prog .lbl { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; font-weight: 600; color: var(--muted); font-size: 1.0625rem; }
-.prog .lbl em { font-style: italic; font-weight: 400; color: var(--brass-ink); }
+.prog .lbl em { font-style: normal; font-weight: 400; color: var(--brass-ink); }
 .ticks { display: flex; gap: 4px; align-items: flex-end; height: 14px; }
 .ticks i { flex: 1; height: 6px; background: var(--line); transition: background var(--std) var(--ease), height var(--std) var(--ease); }
 .ticks i.done { background: var(--accent); }
 .ticks i.now { background: var(--brass); height: 14px; }
 .stage { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: grid; touch-action: pan-y; }
 .page { view-transition-name: bookpage; align-self: center; width: 100%; max-width: 1080px; margin-inline: auto; padding-block: 20px 28px; }
-.pager { background: var(--surface); border-top: 3px double var(--brass); padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); }
+.pager { background: var(--surface); border-top: 1px solid var(--brass); padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); }
 .pager .wrap { display: grid; grid-template-columns: auto 1fr; gap: 12px; }
-.pager .btn { min-height: 62px; font-size: 1.125rem; }
+.pager .btn { min-height: 62px; font-size: 1.3rem; }
 .pager .next { justify-content: space-between; text-align: left; }
 .pager .next .nt { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--body); font-weight: 400; font-size: 1.0625rem; letter-spacing: 0; text-transform: none; opacity: .9; padding-bottom: .2em; }
 @media (max-width: 640px) { .pager .wrap { grid-template-columns: 1fr 1fr; } .pager .next .nt { display: none; } .pager .next { justify-content: center; } }
@@ -142,7 +148,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .cover .copy { flex: 1 1 400px; min-width: 0; display: grid; gap: 14px; justify-items: start; }
 .cover .shot { flex: 1 1 340px; min-width: 0; }
 @media (max-width: 640px) { .cover { gap: 14px; } .cover .copy { gap: 10px; } .cover .shot { order: -1; } .cover .shot .ph { aspect-ratio: 5 / 2; } .cover .frame > div { padding: 6px; } .cover h1 { font-size: 2.1rem; } .cover .orn { display: none; } .lede { font-size: 1.1rem; line-height: 1.5; } .serv .note { display: none; } .steppage { gap: 14px; } .steppage .side .ph { aspect-ratio: 5 / 2; } .steppage { display: flex; flex-direction: column; } .steppage .side { display: contents; } .steppage .side .ph { order: -1; } .steppage .side .fold, .steppage .side .whybtn { order: 2; } .steppage .whybtn { align-self: flex-start; } .num { width: 46px; height: 46px; font-size: 1.35rem; } .page { padding-block: 12px 16px; } }
-.serv { display: grid; gap: 6px; width: min(100%, 420px); padding: 14px 16px 12px; background: var(--surface); border: 1px solid var(--brass); outline: 1px solid var(--brass); outline-offset: 3px; margin: 3px; }
+.serv { display: grid; gap: 6px; width: min(100%, 420px); padding: 14px 16px 12px; background: var(--surface); border: 1px solid var(--brass); }
 .serv .lbl { display: flex; align-items: baseline; gap: 10px; font-family: var(--title); font-weight: 600; font-size: 1.15rem; padding-top: .2em; }
 .serv .lbl b { display: inline-block; min-width: 1.4em; text-align: center; font-size: 2rem; line-height: 1; color: var(--accent-ink); }
 .serv .lbl b.tick { animation: pop var(--std) var(--ease); }
@@ -161,7 +167,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .seg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; position: relative; border: 1.5px solid var(--accent-ink); background: var(--surface); padding: 3px; }
 .seg button { position: relative; z-index: 1; min-height: 44px; padding: .2em 22px 0; border: 0; background: none; cursor: pointer; font-family: var(--title); font-size: 1.0625rem; font-weight: 600; letter-spacing: .03em; color: var(--accent-ink); transition: color var(--std) var(--ease); }
 .seg button[aria-pressed="true"] { color: var(--on-accent); }
-.seg .thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); background: var(--accent); box-shadow: inset 0 0 0 1px var(--accent), inset 0 0 0 2px var(--brass); transition: transform var(--std) var(--ease); }
+.seg .thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); background: var(--accent); transition: transform var(--std) var(--ease); }
 .seg[data-v="elevated"] .thumb { transform: translateX(100%); }
 
 .pagehead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 40px; padding-bottom: 18px; }
@@ -193,11 +199,11 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .prose ul { display: grid; gap: 8px; padding-left: 1.2em; list-style: square; }
 .prose ol { display: grid; gap: 8px; padding-left: 1.4em; }
 .prose li::marker { color: var(--brass); }
-.why { background: var(--band); border-block: 3px double var(--brass); padding: 14px 18px; font-size: 1.125rem; color: var(--ink-2); }
+.why { background: var(--band); border-block: 1px solid var(--brass); padding: 14px 18px; font-size: 1.125rem; color: var(--ink-2); }
 .why .prose { gap: 8px; max-width: none; }
 .why strong { color: var(--ink); }
 .why h4 { margin: 0 0 4px; font-family: var(--title); font-weight: 600; font-size: 1.05rem; letter-spacing: .08em; color: var(--brass-ink); }
-.whybtn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: .2em 20px 0; font-family: var(--title); letter-spacing: .03em; border: 1.5px solid var(--accent-ink); background: var(--surface); color: var(--accent-ink); cursor: pointer; font-weight: 600; box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 4px var(--accent-ink); }
+.whybtn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: .2em 20px 0; font-family: var(--title); letter-spacing: .03em; border: 1.5px solid var(--accent-ink); background: var(--surface); color: var(--accent-ink); cursor: pointer; font-weight: 600; }
 .whybtn svg { margin-top: -.2em; width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--std) var(--ease); }
 .whybtn[aria-expanded="true"] svg { transform: rotate(180deg); }
 .fold { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--std) var(--ease); }
@@ -253,7 +259,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 const RECIPES = __DATA__;
 // Which steps have media in this prototype. On the real site a step gets a slot when a photo or video file exists for it.
 const MEDIA = { "beef-cheek-ragu": { 2: ["photo", "Roasted marrow bones"], 4: ["video", "Searing the cheeks"], 5: ["photo", "Brick-red tomato purée"], 15: ["photo", "The finished ragù"] } };
-const KINDS = ["All", "Slow cooking", "On the grill", "Noodles", "Drinks"];
+const KINDS = ["All", ...new Set(RECIPES.map((r) => r.kind))];
 const app = document.getElementById("app");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)");
 const store = {
@@ -271,10 +277,16 @@ const I = {
   fwd: '<svg class="fwd" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg>',
   bwd: '<svg class="bwd" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>',
   chev: '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>',
+  sun: '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>',
+  moon: '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>',
   fan: '<svg class="orn" aria-hidden="true" width="180" height="30" viewBox="0 0 180 30"><path d="M0 28h58M122 28h58"/><path d="M10 22h48M122 22h48"/><path d="M90 28V3M90 28L75 7M90 28l15-21M90 28L64 14M90 28l26-14M90 28L60 23M90 28l30-5"/><path d="M58 28h64"/></svg>',
   pillars: '<svg class="orn" aria-hidden="true" viewBox="0 0 70 30"><path d="M5 29V20M15 29V14M25 29V8M35 29V2M45 29V8M55 29V14M65 29V20"/></svg>',
   dia: '<svg class="orn" aria-hidden="true" width="90" height="10" viewBox="0 0 90 10"><path d="M2 5h30M58 5h30"/><path d="M45 1l4 4-4 4-4-4z"/></svg>'
 };
+const sysDark = matchMedia("(prefers-color-scheme: dark)");
+const theme = () => document.documentElement.dataset.theme || (sysDark.matches ? "dark" : "light");
+const themeBtn = () => { const dark = theme() === "dark"; return `<button class="theme" type="button" data-theme-toggle aria-label="Switch to ${dark ? "light" : "dark"}">${dark ? I.sun : I.moon}</button>`; };
+{ const saved = store.get("theme", null); if (saved) document.documentElement.dataset.theme = saved; }
 const meta = (r) => `<div class="meta"><span>${I.clock}${r.time}</span><span>${I.people}${r.serves}</span></div>`;
 const slot = (kind, label) => `<div class="ph stepped ${kind === "video" ? "video" : ""}" role="img" aria-label="${kind === "video" ? "Video" : "Photo"} to come: ${label}">${kind === "video" ? I.play : I.photo}<span>${kind === "video" ? "Video" : "Photo"} to come</span></div>`;
 const shot = (r) => `<div class="lift"><div class="frame stepped"><div class="stepped">${slot("photo", r.title)}</div></div></div>`;
@@ -308,21 +320,12 @@ const people = (r) => store.get("people-" + r.slug, r.base);
 const range = (r) => r.unit === "people" ? [1, 12, 1] : [5, 30, 5];
 
 /* ---- home ---- */
-function burst() {
-  let out = "";
-  const n = 48;
-  for (let i = 0; i < n; i++) {
-    const a = (360 / n) * i * Math.PI / 180;
-    out += `<line pathLength="1" x1="${(500 + Math.sin(a) * 120).toFixed(1)}" y1="${(500 - Math.cos(a) * 120).toFixed(1)}" x2="${(500 + Math.sin(a) * 500).toFixed(1)}" y2="${(500 - Math.cos(a) * 500).toFixed(1)}" style="animation-delay:${(i % 12) * 30}ms"/>`;
-  }
-  return `<svg class="burst" aria-hidden="true" viewBox="0 0 1000 1000" fill="none">${out}</svg>`;
-}
-const header = () => `<div class="topbar"></div><div class="wrap masthead">${I.pillars}<a href="#home">MoufCooks</a>${I.pillars}</div><hr class="rule2">`;
+const header = () => `<div class="topbar"></div><div class="wrap masthead">${I.pillars}<a href="#home">MoufCooks</a>${I.pillars}${themeBtn()}</div><hr class="rule2">`;
 const footer = () => `<footer class="foot"><hr class="rule2"><div class="wrap">${I.pillars.replace('class="orn"', 'class="orn" width="70" height="30"')}<span class="name">MoufCooks</span><span class="addr">cooking.mouftools.com</span></div></footer>`;
 function card(r, featured) {
   return `<li><a class="card" href="#recipe-${r.slug}" style="view-transition-name: card-${r.slug}"><div class="frame stepped-top"><div class="stepped-top">
     <div class="ph" ${featured ? "" : `style="view-transition-name: photo-${r.slug}"`} role="img" aria-label="Photo to come: ${r.title}">${I.photo}<span>Photo to come</span></div>
-    <div class="body"><p class="kind">${r.kind}</p><h3>${r.title}</h3>${I.dia}<p>${r.line}</p>${meta(r)}</div>
+    <div class="body"><p class="kind">${r.kind}</p><h3>${r.title}</h3><p>${r.line}</p>${meta(r)}</div>
   </div></div></a></li>`;
 }
 function home() {
@@ -332,11 +335,11 @@ function home() {
   <section class="hero"><div class="wrap">
     <div class="copy"><p class="kind">Tried and loved</p><h1>${f.title}</h1>${I.fan}<p class="lede">${f.intro}</p>${meta(f)}
       <a class="btn" href="#recipe-${f.slug}">Open the recipe</a></div>
-    <div class="shot">${burst()}<div style="view-transition-name: photo-${f.slug}; position: relative; z-index: 1">${shot(f)}</div></div>
+    <div class="shot" style="view-transition-name: photo-${f.slug}">${shot(f)}</div>
   </div></section>
   <main class="wrap">
-    <div class="section-head"><h2>All recipes</h2>${I.fan}</div>
-    <div class="chips" role="group" aria-label="Show recipes by kind">${KINDS.map((k) => `<button class="chip" type="button" data-kind="${k}" aria-pressed="${k === kind}">${k}</button>`).join("")}</div>
+    <div class="section-head"><h2>All recipes</h2></div>
+    <div class="chips" role="group" aria-label="Show recipes by cuisine">${KINDS.map((k) => `<button class="chip" type="button" data-kind="${k}" aria-pressed="${k === kind}">${k}</button>`).join("")}</div>
     <ul class="grid">${list.map((r) => card(r, r === f)).join("")}</ul>
   </main>${footer()}`;
 }
@@ -364,11 +367,11 @@ function needList(r, part) {
 }
 function pages(r) {
   const f = people(r) / r.base, v = store.get("version", "same"), m = MEDIA[r.slug] || {};
-  const hasVersions = r.steps.some((s) => /<li><strong>(Same day|Elevated):/.test(s.text));
+  const hasVersions = r.steps.some((s) => /<li><strong>(Same day|Standard|Elevated):/.test(s.text));
   const out = [{ label: "The recipe", name: r.title, html: `<div class="cover">
       <div class="copy"><p class="kind">${r.kind}</p><h1>${r.title}</h1>${I.fan}<p class="lede">${r.intro}</p>${meta(r)}
         ${serv(r)}
-        ${hasVersions ? `<div class="seg" role="group" aria-label="Version" data-v="${v === "elevated" ? "elevated" : "same"}"><span class="thumb"></span><button type="button" data-ver="same" aria-pressed="${v !== "elevated"}">Same day</button><button type="button" data-ver="elevated" aria-pressed="${v === "elevated"}">Elevated</button></div>` : ""}</div>
+        ${hasVersions ? `<div class="seg" role="group" aria-label="Version" data-v="${v === "elevated" ? "elevated" : "same"}"><span class="thumb"></span><button type="button" data-ver="same" aria-pressed="${v !== "elevated"}">Standard</button><button type="button" data-ver="elevated" aria-pressed="${v === "elevated"}">Elevated</button></div>` : ""}</div>
       <div class="shot" style="view-transition-name: photo-${r.slug}">${shot(r)}</div></div>` }];
   const parts = needParts(r);
   parts.forEach((part, k) => out.push({ label: parts.length > 1 ? `What you need, ${k + 1} of ${parts.length}` : "What you need", name: "What you need", html: `<div class="pagehead"><h1>What you need</h1>${k === 0 ? serv(r) : ""}</div><div class="needcols" data-part="${part.join(",")}">${needList(r, part)}</div>` }));
@@ -379,7 +382,7 @@ function pages(r) {
       <div class="main"><div class="head"><div class="num" aria-hidden="true">${s.n}</div></div><h1>${s.title}</h1><div class="prose">${scale(s.text, f)}</div></div>
       ${media || why ? `<div class="side">${media}${why}</div>` : ""}</div>` });
   });
-  if (r.extras.length) out.push({ label: "More", name: "More about this recipe", html: `<div class="more"><h1>More about this recipe</h1>${I.fan}${r.extras.map((x) => `<details><summary>${x.name}${I.chev}</summary><div class="prose">${scale(x.html, f)}</div></details>`).join("")}</div>` });
+  if (r.extras.length) out.push({ label: "More", name: "More about this recipe", html: `<div class="more"><h1>More about this recipe</h1>${r.extras.map((x) => `<details><summary>${x.name}${I.chev}</summary><div class="prose">${scale(x.html, f)}</div></details>`).join("")}</div>` });
   return out;
 }
 function at(r, n) {
@@ -390,7 +393,7 @@ function at(r, n) {
 function book(r) {
   const ps = pages(r), i = Math.min(at(r), ps.length - 1), p = ps[i], next = ps[i + 1];
   return `<div class="book">
-    <div class="wrap"><div class="bar"><a href="#home">${I.bwd}All recipes</a><span class="t">${r.title}</span></div>
+    <div class="wrap"><div class="bar"><a href="#home">${I.bwd}All recipes</a><span class="t">${r.title}</span>${themeBtn()}</div>
       <div class="prog"><div class="lbl"><span>${p.label}</span>${p.phase ? `<em>${p.phase}</em>` : ""}</div>
         <div class="ticks" aria-hidden="true">${ps.map((_, k) => `<i class="${k < i ? "done" : k === i ? "now" : ""}"></i>`).join("")}</div></div></div>
     <div class="stage wrap"><div class="page">${p.html}</div></div>
@@ -403,7 +406,7 @@ function book(r) {
 function applyVersion(root) {
   const v = store.get("version", "same");
   root.querySelectorAll(".prose li").forEach((li) => {
-    const m = /^<strong>(Same day|Elevated):<\/strong>/.exec(li.innerHTML.trim());
+    const m = /^<strong>(Same day|Standard|Elevated):<\/strong>/.exec(li.innerHTML.trim());
     if (m) li.toggleAttribute("data-hide", (m[1] === "Elevated") !== (v === "elevated"));
   });
 }
@@ -465,6 +468,11 @@ addEventListener("hashchange", () => {
   lastView = next.view;
 });
 app.addEventListener("click", (e) => {
+  if (e.target.closest("[data-theme-toggle]")) {
+    const next = theme() === "dark" ? "light" : "dark";
+    change(() => { document.documentElement.dataset.theme = next; store.set("theme", next); app.querySelectorAll("[data-theme-toggle]").forEach((b) => { b.outerHTML = themeBtn(); }); });
+    return;
+  }
   const chip = e.target.closest("[data-kind]");
   if (chip) { kind = chip.dataset.kind; change(render); return; }
   const ver = e.target.closest("[data-ver]");

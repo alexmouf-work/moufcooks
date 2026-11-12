@@ -8,11 +8,11 @@ from pathlib import Path
 # What the Markdown doesn't carry yet: a kind, a card line and short meta. In the real build these move into
 # front matter at the top of each recipe file.
 EXTRA = {
-    "beef-cheek-ragu": ("Slow cooking", "Slow-braised beef cheek in red wine and tomato, with roasted bone marrow.", "About 7 hours", "Serves 6–8", 6, "people"),
-    "coq-au-vin": ("Slow cooking", "Chicken braised in red wine and cognac, with crisp skin and pickled shallots.", "About 5 hours", "Serves 6–8", 6, "people"),
-    "chilli-miso-ramen": ("Noodles", "Creamy chilli miso broth, crisp chicken and soy eggs.", "About 3 hours", "Serves 4", 4, "people"),
-    "spatchcock-chicken-kettle": ("On the grill", "A whole chicken roasted over charcoal, with crisp golden skin.", "About 3½ hours", "Serves 4", 4, "people"),
-    "pumpkin-spice-syrup": ("Drinks", "A spiced syrup made with real pumpkin, for lattes in minutes.", "About 1 hour", "Makes 350 ml", 10, "lattes"),
+    "beef-cheek-ragu": ("Italian", "Slow-braised beef cheek in red wine and tomato, with roasted bone marrow.", "About 7 hours", "Serves 6–8", 6, "people"),
+    "coq-au-vin": ("French", "Chicken braised in red wine and cognac, with crisp skin and pickled shallots.", "About 5 hours", "Serves 6–8", 6, "people"),
+    "chilli-miso-ramen": ("Japanese", "Creamy chilli miso broth, crisp chicken and soy eggs.", "About 3 hours", "Serves 4", 4, "people"),
+    "spatchcock-chicken-kettle": ("American", "A whole chicken roasted over charcoal, with crisp golden skin.", "About 3½ hours", "Serves 4", 4, "people"),
+    "pumpkin-spice-syrup": ("American", "A spiced syrup made with real pumpkin, for lattes in minutes.", "About 1 hour", "Makes 350 ml", 10, "lattes"),
 }
 ORDER = list(EXTRA)
 

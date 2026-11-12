@@ -30,7 +30,7 @@ propped up in the kitchen, with wet or floury hands, glancing between the pan an
    what you need (tickable while shopping or cooking), each step with its "why", then serving, leftovers and notes.
    Swipe and arrow keys work too. The screen stays awake, and coming back returns to the same page.
 3. **Any number of people:** "add sliders for the number of people". A slider reworks every amount. Where a recipe has
-   two versions, **same day** and **elevated**, the reader switches between them.
+   two versions, **standard** and **elevated**, the reader switches between them.
 4. **Photos, and later videos, of the steps:** "we may show photographs or later even videos of the steps, so be sure
    to prepare for that." Each step has a slot that appears when a photo or video exists for it, and the page looks
    finished without any.

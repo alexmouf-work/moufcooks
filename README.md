@@ -28,7 +28,7 @@ Mock-up: https://claude.ai/artifact/2yBcy8oUc5vkdigyknTmm9
 
 Copy an existing file in `recipes/`, name it after the dish in lower case with hyphens (`beef-cheek-ragu.md`), and keep
 the same sections: what it is, a shopping list (assume nothing is in the cupboard), two versions, each with a
-timeline: **same day** (start to table in one day) and **elevated** (the longer timeframe, a day or two ahead, for
+timeline: **standard** (start to table in one day) and **elevated** (the longer timeframe, a day or two ahead, for
 deeper flavour), method (with why each step matters), serving, leftovers (how it keeps and what to turn it
 into next), notes.
 

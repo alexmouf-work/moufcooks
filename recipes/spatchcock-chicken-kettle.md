@@ -4,7 +4,7 @@ A whole chicken, flattened and roasted with the lid on over a two-zone charcoal 
 juicy meat and a light smoke, and the breast and legs finish at the same time.
 
 - **Serves:** 4
-- **Same day:** about 3½ hours (2 hours salting) · **Elevated:** overnight salting, plus smoke
+- **Standard:** about 3½ hours (2 hours salting) · **Elevated:** overnight salting, plus smoke
 - **Grill:** Weber charcoal kettle with lid (written for a standard 57 cm kettle)
 - **Status:** written 22 October 2026; not yet cooked. Add notes at the bottom.
 
@@ -33,7 +33,7 @@ smoke.
 
 ## Versions
 
-**Same day** (about 3½ hours)
+**Standard** (about 3½ hours)
 
 | From start | Do |
 |---|---|
@@ -51,11 +51,11 @@ The skin crisps a little less after only 2 hours of salting, and the seasoning s
 | When | Do |
 |---|---|
 | Day 1, evening (20 min) | Spatchcock and dry-brine overnight, uncovered (steps 1–2). Make the herb butter and refrigerate it; take it out an hour before using. |
-| Day 2 | As the same-day version from lighting the chimney, **with the wood chunk** on the coals for smoke. |
+| Day 2 | As the standard version from lighting the chimney, **with the wood chunk** on the coals for smoke. |
 
 *Why elevated tastes better:* overnight, the salt seasons the meat right through and the skin dries out completely, so
 it crisps and blisters properly. The herb butter's garlic and lemon soften into the butter overnight. The wood adds a
-light smoke the same-day version goes without.
+light smoke the standard version goes without.
 
 ## Method
 

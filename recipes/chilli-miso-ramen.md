@@ -5,7 +5,7 @@ thigh, jammy soy-marinated eggs, seared pak choi and a knob of butter. Based on 
 together: a stronger broth, skin-on chicken, a proper egg marinade and real ramen noodles.
 
 - **Serves:** 4
-- **Same day:** about 3 hours · **Elevated:** two days, with overnight soaking and marinating
+- **Standard:** about 3 hours · **Elevated:** two days, with overnight soaking and marinating
 - **Status:** written 1 November 2026; not yet cooked. Add notes at the bottom.
 
 ## Shopping list
@@ -44,7 +44,7 @@ water · a zip-lock bag · a probe thermometer.
 
 ## Versions
 
-**Same day** (about 3 hours)
+**Standard** (about 3 hours)
 
 | From start | Do |
 |---|---|

@@ -4,9 +4,9 @@ A rich, slow-braised ragù of beef cheek, red wine and tomato, with roasted bone
 cheeks cook until they fall apart at a touch.
 
 - **Serves:** 6–8 with pasta (1.25 kg raw cheek gives roughly 750 g cooked meat)
-- **Same day:** about 6½–7 hours from start to table. This is the version that was cooked and loved.
+- **Standard:** about 6½–7 hours from start to table. This is the version that was cooked and loved.
 - **Elevated:** over three days, with overnight salting and an overnight rest. Deeper and more settled in flavour.
-- **Status:** cooked (same day) 17 October 2026. Verdict: "very, very pleased". See the cook's notes at the bottom.
+- **Status:** cooked (standard) 17 October 2026. Verdict: "very, very pleased". See the cook's notes at the bottom.
 
 ## Shopping list
 
@@ -53,7 +53,7 @@ tbsp in the fridge to stir in at the finish in place of the scooped marrow. Put 
 
 ## Versions
 
-**Same day** (about 6½–7 hours)
+**Standard** (about 6½–7 hours)
 
 | From start | Do |
 |---|---|
@@ -74,7 +74,7 @@ tbsp in the fridge to stir in at the finish in place of the scooped marrow. Put 
 | When | Do |
 |---|---|
 | Day 1, evening (10 min) | Trim the cheeks and salt them **whole**; leave uncovered in the fridge overnight (step 1). Optional: make bone stock during the day (see the notes). |
-| Day 2 (about 6½ hours) | Cook as for the same-day version, from the bones onwards. Whole cheeks take a little longer, about 4½–5 hours in the oven. Cool in the liquid, then refrigerate overnight (step 11). |
+| Day 2 (about 6½ hours) | Cook as for the standard version, from the bones onwards. Whole cheeks take a little longer, about 4½–5 hours in the oven. Cool in the liquid, then refrigerate overnight (step 11). |
 | Day 3 (40 min) | Lift off the set fat, reheat gently, finish and serve (steps 12–15). |
 
 *Why elevated tastes deeper:* overnight, the salt seasons the cheeks right to the centre and dries their surface so they
@@ -87,11 +87,11 @@ reabsorbs liquid as it cools. The fat sets into a lid that lifts off in one piec
 
 **1. Salt the cheeks.** Check for any shiny, silvery membrane left on the outside and slice it off. Sprinkle the 12 g of
 salt evenly over every side.
-- **Same day:** halve each cheek first, so the halves are about equally thick. Leave them uncovered for **one hour**,
+- **Standard:** halve each cheek first, so the halves are about equally thick. Leave them uncovered for **one hour**,
   at room temperature or in the fridge.
 - **Elevated:** keep them whole. Leave them uncovered on a rack in the fridge overnight.
 
-*Why halves for same day:* six pieces have far more surface to brown than three, and that browning becomes flavour in
+*Why halves for the standard version:* six pieces have far more surface to brown than three, and that browning becomes flavour in
 the sauce. They also soften a little sooner. Don't go smaller than halves: small chunks dry out and turn stringy before
 the collagen melts.
 *Why the hour:* in the first 20–40 minutes, salt pulls moisture to the surface, which then steams instead of browning.
@@ -170,7 +170,7 @@ with no resistance, and a fork should twist through it easily. If it doesn't, gi
 is unlikely, so when in doubt, give it longer.
 
 **11. Rest it.**
-- **Same day:** rest for 30 minutes out of the oven. Tilt the pot so the fat pools on one side, and lift most of it off
+- **Standard:** rest for 30 minutes out of the oven. Tilt the pot so the fat pools on one side, and lift most of it off
   with a ladle, keeping a spoonful in for flavour.
 - **Elevated:** let it cool in its liquid, then refrigerate overnight. Next day, lift off the set fat in one piece
   (keep a spoonful), and reheat the pot gently on the hob, covered, for 20–30 minutes until bubbling at the edges.
@@ -248,7 +248,7 @@ and 1 small garlic clove, all chopped finely together. Scatter it over just befo
 
 *(Add what happened each time you make it: timings, what you'd change, who liked it.)*
 
-**17 October 2026 (first cook, same day, Alexander)**
+**17 October 2026 (first cook, standard, Alexander)**
 - Three trimmed cheeks (1.25 kg), halved, salted for one hour.
 - Bones were thin, whole shin bones, too hard to cut at home. Roasted whole for about 20 minutes; little solid
   marrow, but they released plenty of liquid fat. That fat was used for searing, and some kept for the finish in
