@@ -4,7 +4,7 @@ A rich, slow-braised ragù of beef cheek, red wine and tomato, with roasted bone
 cheeks cook until they fall apart at a touch.
 
 - **Serves:** 6–8 with pasta (1.25 kg raw cheek gives roughly 750 g cooked meat)
-- **Standard:** about 6½–7 hours from start to table. This is the version that was cooked and loved.
+- **Standard:** about 6½–7 hours from start to table.
 - **Elevated:** over three days, with overnight salting and an overnight rest. Deeper and more settled in flavour.
 - **Status:** cooked (standard) 17 October 2026. Verdict: "very, very pleased". See the cook's notes at the bottom.
 
@@ -199,7 +199,7 @@ over-salting, because reducing concentrates the salt already there.
 
 ## Serving
 
-**Pasta: tagliatelle.** Pappardelle was tried on the first cook and was too wide to wrap round the meat nicely, even
+**Pasta: tagliatelle.** Pappardelle is too wide to wrap round the meat nicely, even
 cooked exactly right. Tagliatelle is narrower but still flat enough to carry the shredded meat. Use 100 g dried or 120 g
 fresh pasta per person. Cook it 1–2 minutes short of the packet time, then toss it in a wide pan with the ragù and a
 splash of the pasta water for a minute or two, until the sauce clings and shines. Serve with Parmesan.

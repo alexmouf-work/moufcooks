@@ -219,6 +219,11 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
   .steppage.media { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .steppage.media .main { align-self: start; }
   .steppage.media .side .ph { aspect-ratio: auto; height: 100%; min-height: 300px; }
+  .page:has(.cover) { align-self: stretch; display: grid; }
+  .cover { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 0 52px; }
+  .cover .copy { align-self: center; }
+  .cover .shot, .cover .shot .lift, .cover .shot .frame, .cover .shot .frame > div { height: 100%; }
+  .cover .shot .ph { aspect-ratio: auto; height: 100%; min-height: 300px; }
 }
 .whydrop { position: absolute; left: 0; right: 0; top: 0; z-index: 5; max-height: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--brass); box-shadow: 0 18px 30px rgb(var(--shade) / .28); opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity var(--std) var(--ease), transform var(--std) var(--ease), visibility 0s linear var(--std); }
 .whydrop.open { overflow: auto; opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
@@ -384,7 +389,7 @@ function pages(r) {
   const parts = needParts(r);
   parts.forEach((part, k) => out.push({ label: parts.length > 1 ? `What you need, ${k + 1} of ${parts.length}` : "What you need", name: "What you need", html: `<div class="pagehead"><h1>What you need</h1>${k === 0 ? serv(r) : ""}</div><div class="needcols" data-part="${part.join(",")}">${needList(r, part)}</div>` }));
   r.steps.forEach((s) => {
-    const media = m[s.n] ? slot(m[s.n][0], m[s.n][1]) : "";
+    const media = m[s.n] ? slot(m[s.n][0], m[s.n][1]) : slot("photo", s.title);
     const why = s.why ? `<button class="whybtn" type="button" aria-expanded="false" aria-controls="why">Why? ${I.chev}</button>` : "";
     out.push({ label: `Step ${s.n} of ${r.steps.length}`, phase: s.phase, name: s.title, html: `<div class="steppage ${media ? "media" : ""}">
       <div class="main"><div class="head"><div class="num" aria-hidden="true">${s.n}</div></div><h1>${s.title}</h1><div class="prose">${scale(s.text, f)}</div>${why}</div>

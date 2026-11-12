@@ -5,7 +5,7 @@ shallots. Boneless thighs make it calm to cook and easy to reheat; crackling she
 the crunch, and quick-pickled shallots cut through the richness. Served on mashed potato.
 
 - **Serves:** 6–8
-- **Cook early (the plan for 10 November):** braise in the early afternoon, rest, reheat for 7 pm
+- **Cook early:** braise in the early afternoon, rest, reheat for 7 pm
 - **Straight through:** start about 3:30 pm and serve as it finishes
 - **Elevated:** braise the day before, refrigerate overnight, reheat on the day
 - **Status:** written 9–10 November 2026 with Alexander; first cook 10 November.
@@ -46,7 +46,7 @@ paper · a probe thermometer · a jar for the pickles.
 
 ## Versions
 
-**Cook early, serve at 7 pm** (the plan for 10 November)
+**Cook early, serve at 7 pm**
 
 | When | Do |
 |---|---|
