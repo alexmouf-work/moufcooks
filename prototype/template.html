@@ -68,6 +68,18 @@ em, i { font-style: normal; }
 .foot .name { font-family: var(--title); font-weight: 600; font-size: 1.4rem; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; }
 .foot .addr { font-size: 1rem; letter-spacing: .06em; color: var(--foot-ink); }
 .foot .orn { color: #C9B27C; }
+.foot .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 28px; margin-top: 6px; }
+.foot .links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--foot-ink); font-size: 1rem; text-underline-offset: .25em; }
+.foot .links a:hover { color: #FFFFFF; }
+/* ---- plain pages: privacy policy, terms of use ---- */
+.doc { max-width: 42em; margin-inline: auto; padding-block: 28px 8px; }
+.doc .back { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-family: var(--title); font-weight: 600; letter-spacing: .04em; text-decoration: none; }
+.doc .back svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.doc h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.1; letter-spacing: .03em; margin: 10px 0 18px; }
+.doc .prose { max-width: none; gap: 12px; }
+.doc .prose > p:first-child { color: var(--muted); font-size: 1rem; }
+.doc h2 { font-family: var(--title); font-weight: 600; font-size: 1.45rem; letter-spacing: .03em; line-height: 1.2; margin-top: 22px; padding-bottom: 6px; border-bottom: 1px solid var(--brass); }
+.doc a { text-underline-offset: .2em; overflow-wrap: anywhere; }
 
 /* ---- buttons ---- */
 .btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: .2em 30px 0; font-family: var(--title); border: 0; background: none; cursor: pointer; text-decoration: none; color: var(--on-accent); font-weight: 600; font-size: 1.25rem; letter-spacing: .02em; transition: transform var(--quick) var(--ease); }
@@ -274,6 +286,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 
 <script>
 const RECIPES = __DATA__;
+const PAGES = __PAGES__;   // privacy policy and terms of use, from ../pages
 // Which steps have media in this prototype. On the real site a step gets a slot when a photo or video file exists for it.
 const MEDIA = { "beef-cheek-ragu": { 2: ["photo", "Roasted marrow bones"], 4: ["video", "Searing the cheeks"], 5: ["photo", "Brick-red tomato purée"], 15: ["photo", "The finished ragù"] } };
 const KINDS = ["All", ...new Set(RECIPES.map((r) => r.kind))];
@@ -338,12 +351,15 @@ const range = (r) => r.unit === "people" ? [1, 12, 1] : [5, 30, 5];
 
 /* ---- home ---- */
 const header = () => `<div class="topbar"></div><div class="wrap masthead">${I.pillars}<a href="#home">MoufCooks</a>${I.pillars}${themeBtn()}</div><hr class="rule2">`;
-const footer = () => `<footer class="foot"><hr class="rule2"><div class="wrap">${I.pillars.replace('class="orn"', 'class="orn" width="70" height="30"')}<span class="name">MoufCooks</span><span class="addr">cooking.mouftools.com</span></div></footer>`;
+const footer = () => `<footer class="foot"><hr class="rule2"><div class="wrap">${I.pillars.replace('class="orn"', 'class="orn" width="70" height="30"')}<span class="name">MoufCooks</span><span class="addr">cooking.mouftools.com</span><nav class="links" aria-label="About this site"><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></nav></div></footer>`;
 function card(r, featured) {
   return `<li><a class="card" href="#recipe-${r.slug}" style="view-transition-name: card-${r.slug}"><div class="frame stepped-top"><div class="stepped-top">
     <div class="ph" role="img" aria-label="Photo to come: ${r.title}">${I.photo}<span>Photo to come</span></div>
     <div class="body"><p class="kind">${r.kind}</p><h3>${r.title}</h3><p>${r.line}</p>${meta(r)}</div>
   </div></div></a></li>`;
+}
+function docPage(d) {
+  return `${header()}<main class="wrap"><article class="doc"><a class="back" href="#home">${I.bwd}All recipes</a><h1>${d.title}</h1><div class="prose">${d.html}</div></article></main>${footer()}`;
 }
 function home() {
   const f = RECIPES[0];
@@ -432,13 +448,15 @@ function applyVersion(root) {
 function route() {
   const m = /^(?:recipe|cook)-(.+)$/.exec(location.hash.slice(1));
   const r = m && bySlug(m[1]);
-  return r ? { view: "recipe", r } : { view: "home" };
+  if (r) return { view: "recipe", r };
+  const d = PAGES[location.hash.slice(1)];
+  return d ? { view: "doc", d } : { view: "home" };
 }
 function render() {
-  const { view, r } = route();
-  app.innerHTML = view === "home" ? home() : book(r);
+  const { view, r, d } = route();
+  app.innerHTML = view === "home" ? home() : view === "doc" ? docPage(d) : book(r);
   if (view === "recipe") { applyVersion(app); keepAwake(); } else letSleep();
-  document.title = view === "home" ? "MoufCooks" : r.title;
+  document.title = view === "home" ? "MoufCooks" : view === "doc" ? d.title + " · MoufCooks" : r.title;
 }
 function change(fn, dir) {
   if (!document.startViewTransition || reduce.matches) { fn(); return; }
