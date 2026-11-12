@@ -135,8 +135,8 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .ticks i { flex: 1; height: 6px; background: var(--line); transition: background var(--std) var(--ease), height var(--std) var(--ease); }
 .ticks i.done { background: var(--accent); }
 .ticks i.now { background: var(--brass); height: 14px; }
-.stage { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: grid; touch-action: pan-y; }
-.page { view-transition-name: bookpage; align-self: center; width: 100%; max-width: 1080px; margin-inline: auto; padding-block: 20px 28px; }
+.stage { view-transition-name: bookpage; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: grid; touch-action: pan-y; }
+.page { align-self: start; width: 100%; max-width: 1080px; margin-inline: auto; padding-block: 20px 28px; }
 .pager { background: var(--surface); border-top: 1px solid var(--brass); padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); }
 .pager .wrap { display: grid; grid-template-columns: auto 1fr; gap: 12px; }
 .pager .btn { min-height: 62px; font-size: 1.3rem; }
@@ -147,7 +147,8 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .cover { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 52px; }
 .cover .copy { flex: 1 1 400px; min-width: 0; display: grid; gap: 14px; justify-items: start; }
 .cover .shot { flex: 1 1 340px; min-width: 0; }
-@media (max-width: 640px) { .cover { gap: 14px; } .cover .copy { gap: 10px; } .cover .shot { order: -1; } .cover .shot .ph { aspect-ratio: 5 / 2; } .cover .frame > div { padding: 6px; } .cover h1 { font-size: 2.1rem; } .cover .orn { display: none; } .lede { font-size: 1.1rem; line-height: 1.5; } .serv .note { display: none; } .steppage { gap: 14px; } .steppage .side .ph { aspect-ratio: 5 / 2; } .steppage { display: flex; flex-direction: column; } .steppage .side { display: contents; } .steppage .side .ph { order: -1; } .steppage .side .fold, .steppage .side .whybtn { order: 2; } .steppage .whybtn { align-self: flex-start; } .num { width: 46px; height: 46px; font-size: 1.35rem; } .page { padding-block: 12px 16px; } }
+@media (min-width: 641px) and (max-width: 860px) { .cover .shot .ph { aspect-ratio: 5 / 2; } }
+@media (max-width: 640px) { .cover { gap: 14px; } .cover .copy { gap: 10px; } .cover .shot { order: -1; } .cover .shot .ph { aspect-ratio: 5 / 2; } .cover .frame > div { padding: 6px; } .cover h1 { font-size: 2.1rem; } .cover .orn { display: none; } .lede { font-size: 1.1rem; line-height: 1.5; } .serv .note { display: none; } .steppage { gap: 14px; } .steppage { display: flex; flex-direction: column; } .steppage .side { order: -1; } .num { width: 46px; height: 46px; font-size: 1.35rem; } .page { padding-block: 12px 16px; } }
 .serv { display: grid; gap: 6px; width: min(100%, 420px); padding: 14px 16px 12px; background: var(--surface); border: 1px solid var(--brass); }
 .serv .lbl { display: flex; align-items: baseline; gap: 10px; font-family: var(--title); font-weight: 600; font-size: 1.15rem; padding-top: .2em; }
 .serv .lbl b { display: inline-block; min-width: 1.4em; text-align: center; font-size: 2rem; line-height: 1; color: var(--accent-ink); }
@@ -175,7 +176,9 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .pagehead .serv .note { display: none; }
 .pagehead h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
 .needcols { columns: 3 270px; column-gap: 44px; }
-.needcols > div { break-inside: avoid; padding-bottom: 14px; }
+.needcols > div { padding-bottom: 14px; }
+.needcols label { break-inside: avoid; }
+.needcols h3 { break-after: avoid; }
 .needcols h3 { font-family: var(--title); font-weight: 600; font-size: 1.15rem; letter-spacing: .04em; color: var(--brass-ink); padding: .2em 0 6px; border-bottom: 1px solid var(--brass); margin-bottom: 4px; }
 .needcols { font-size: 1.125rem; line-height: 1.45; }
 .needcols label { display: flex; gap: 14px; align-items: flex-start; min-height: 44px; padding-block: 5px; cursor: pointer; }
@@ -187,14 +190,16 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .needcols input:checked + span { color: var(--muted); background-size: 100% 1.5px; }
 .needcols .q { font-weight: 600; }
 
-.steppage { display: grid; gap: 22px 52px; align-items: start; }
+.steppage { position: relative; display: grid; gap: 22px 52px; align-items: start; }
+.steppage:not(.media) { max-width: 46em; margin-inline: auto; }
 .steppage .head { display: flex; align-items: center; gap: 16px; }
 .num { flex: none; width: 56px; height: 56px; display: grid; place-items: center; padding-top: .16em; background: var(--accent); color: var(--on-accent); font-family: var(--title); font-weight: 600; font-size: 1.6rem; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
 .steppage .main { display: grid; gap: 16px; min-width: 0; }
 .steppage h1 { font-size: clamp(1.8rem, 4.4vw, 2.7rem); }
 .steppage .main .prose { font-size: clamp(1.25rem, 2vw, 1.4rem); line-height: 1.55; }
 .steppage .side { display: grid; gap: 18px; min-width: 0; }
-.steppage .side .ph { aspect-ratio: 16 / 10; --s: 10px; }
+.steppage .side .ph { aspect-ratio: 4 / 3; }
+@media (max-width: 640px) { .steppage .side .ph { aspect-ratio: 2 / 1; } }
 .prose { display: grid; gap: 10px; max-width: 40em; }
 .prose ul { display: grid; gap: 8px; padding-left: 1.2em; list-style: square; }
 .prose ol { display: grid; gap: 8px; padding-left: 1.4em; }
@@ -209,11 +214,16 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 .fold { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--std) var(--ease); }
 .fold > div { overflow: hidden; }
 .fold.open { grid-template-rows: 1fr; }
-@media (min-width: 900px) {
-  .steppage.two { grid-template-columns: 1.15fr .85fr; }
-  .steppage .whybtn { display: none; }
-  .steppage .fold { grid-template-rows: 1fr; }
+@media (min-width: 700px) {
+  .page:has(.steppage.media) { align-self: stretch; display: grid; }
+  .steppage.media { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .steppage.media .main { align-self: start; }
+  .steppage.media .side .ph { aspect-ratio: auto; height: 100%; min-height: 300px; }
 }
+.whydrop { position: absolute; left: 0; right: 0; top: 0; z-index: 5; max-height: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--brass); box-shadow: 0 18px 30px rgb(var(--shade) / .28); opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity var(--std) var(--ease), transform var(--std) var(--ease), visibility 0s linear var(--std); }
+.whydrop.open { overflow: auto; opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.whydrop .why { background: none; border: 0; padding: 18px 24px 22px; font-size: 1.2rem; }
+.whydrop .why .prose { max-width: 60em; }
 [data-hide] { display: none !important; }
 
 .more { display: grid; gap: 12px; max-width: 46em; margin-inline: auto; }
@@ -237,6 +247,7 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 ::view-transition-old(root) { animation-duration: 200ms; animation-timing-function: var(--ease); }
 ::view-transition-new(root) { animation-duration: var(--std); animation-timing-function: var(--ease); }
 ::view-transition-group(*) { animation-duration: 440ms; animation-timing-function: var(--ease); }
+::view-transition-group(bookpage) { animation: none; }
 ::view-transition-old(bookpage) { animation: out-l 220ms var(--ease) both; }
 ::view-transition-new(bookpage) { animation: in-r 380ms var(--ease) 60ms both; }
 [data-dir="back"]::view-transition-old(bookpage) { animation-name: out-r; }
@@ -245,9 +256,6 @@ h1 { font-family: var(--title); font-weight: 600; font-size: clamp(2.4rem, 6vw, 
 @keyframes in-r { from { opacity: 0; transform: translateX(64px); } }
 @keyframes out-r { to { opacity: 0; transform: translateX(48px); } }
 @keyframes in-l { from { opacity: 0; transform: translateX(-64px); } }
-/* the step number settles in a beat after its page */
-.page .num { animation: settle 420ms var(--ease) 160ms both; }
-@keyframes settle { from { transform: scale(.6) rotate(-45deg); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; }
 }
@@ -324,7 +332,7 @@ const header = () => `<div class="topbar"></div><div class="wrap masthead">${I.p
 const footer = () => `<footer class="foot"><hr class="rule2"><div class="wrap">${I.pillars.replace('class="orn"', 'class="orn" width="70" height="30"')}<span class="name">MoufCooks</span><span class="addr">cooking.mouftools.com</span></div></footer>`;
 function card(r, featured) {
   return `<li><a class="card" href="#recipe-${r.slug}" style="view-transition-name: card-${r.slug}"><div class="frame stepped-top"><div class="stepped-top">
-    <div class="ph" ${featured ? "" : `style="view-transition-name: photo-${r.slug}"`} role="img" aria-label="Photo to come: ${r.title}">${I.photo}<span>Photo to come</span></div>
+    <div class="ph" role="img" aria-label="Photo to come: ${r.title}">${I.photo}<span>Photo to come</span></div>
     <div class="body"><p class="kind">${r.kind}</p><h3>${r.title}</h3><p>${r.line}</p>${meta(r)}</div>
   </div></div></a></li>`;
 }
@@ -335,7 +343,7 @@ function home() {
   <section class="hero"><div class="wrap">
     <div class="copy"><p class="kind">Tried and loved</p><h1>${f.title}</h1>${I.fan}<p class="lede">${f.intro}</p>${meta(f)}
       <a class="btn" href="#recipe-${f.slug}">Open the recipe</a></div>
-    <div class="shot" style="view-transition-name: photo-${f.slug}">${shot(f)}</div>
+    <div class="shot">${shot(f)}</div>
   </div></section>
   <main class="wrap">
     <div class="section-head"><h2>All recipes</h2></div>
@@ -372,15 +380,16 @@ function pages(r) {
       <div class="copy"><p class="kind">${r.kind}</p><h1>${r.title}</h1>${I.fan}<p class="lede">${r.intro}</p>${meta(r)}
         ${serv(r)}
         ${hasVersions ? `<div class="seg" role="group" aria-label="Version" data-v="${v === "elevated" ? "elevated" : "same"}"><span class="thumb"></span><button type="button" data-ver="same" aria-pressed="${v !== "elevated"}">Standard</button><button type="button" data-ver="elevated" aria-pressed="${v === "elevated"}">Elevated</button></div>` : ""}</div>
-      <div class="shot" style="view-transition-name: photo-${r.slug}">${shot(r)}</div></div>` }];
+      <div class="shot">${shot(r)}</div></div>` }];
   const parts = needParts(r);
   parts.forEach((part, k) => out.push({ label: parts.length > 1 ? `What you need, ${k + 1} of ${parts.length}` : "What you need", name: "What you need", html: `<div class="pagehead"><h1>What you need</h1>${k === 0 ? serv(r) : ""}</div><div class="needcols" data-part="${part.join(",")}">${needList(r, part)}</div>` }));
   r.steps.forEach((s) => {
     const media = m[s.n] ? slot(m[s.n][0], m[s.n][1]) : "";
-    const why = s.why ? `<button class="whybtn" type="button" aria-expanded="false" aria-controls="why">Why this step ${I.chev}</button><div class="fold" id="why"><div><div class="why"><h4>Why</h4><div class="prose">${scale(s.why, f)}</div></div></div></div>` : "";
-    out.push({ label: `Step ${s.n} of ${r.steps.length}`, phase: s.phase, name: s.title, html: `<div class="steppage ${media || why ? "two" : ""}">
-      <div class="main"><div class="head"><div class="num" aria-hidden="true">${s.n}</div></div><h1>${s.title}</h1><div class="prose">${scale(s.text, f)}</div></div>
-      ${media || why ? `<div class="side">${media}${why}</div>` : ""}</div>` });
+    const why = s.why ? `<button class="whybtn" type="button" aria-expanded="false" aria-controls="why">Why? ${I.chev}</button>` : "";
+    out.push({ label: `Step ${s.n} of ${r.steps.length}`, phase: s.phase, name: s.title, html: `<div class="steppage ${media ? "media" : ""}">
+      <div class="main"><div class="head"><div class="num" aria-hidden="true">${s.n}</div></div><h1>${s.title}</h1><div class="prose">${scale(s.text, f)}</div>${why}</div>
+      ${media ? `<div class="side">${media}</div>` : ""}
+      ${s.why ? `<div class="whydrop" id="why"><div class="why"><div class="prose">${scale(s.why, f)}</div></div></div>` : ""}</div>` });
   });
   if (r.extras.length) out.push({ label: "More", name: "More about this recipe", html: `<div class="more"><h1>More about this recipe</h1>${r.extras.map((x) => `<details><summary>${x.name}${I.chev}</summary><div class="prose">${scale(x.html, f)}</div></details>`).join("")}</div>` });
   return out;
@@ -416,16 +425,10 @@ function route() {
   const r = m && bySlug(m[1]);
   return r ? { view: "recipe", r } : { view: "home" };
 }
-function fit() {
-  const st = app.querySelector(".stage"), pg = app.querySelector(".page");
-  if (!st || !pg) return;
-  let z = 1; pg.style.zoom = "";
-  while (st.scrollHeight > st.clientHeight + 1 && z > .8) { z -= .04; pg.style.zoom = z; }
-}
 function render() {
   const { view, r } = route();
   app.innerHTML = view === "home" ? home() : book(r);
-  if (view === "recipe") { applyVersion(app); fit(); keepAwake(); } else letSleep();
+  if (view === "recipe") { applyVersion(app); keepAwake(); } else letSleep();
   document.title = view === "home" ? "MoufCooks" : r.title;
 }
 function change(fn, dir) {
@@ -437,6 +440,20 @@ async function keepAwake() {
   try { if (!wake && navigator.wakeLock) { wake = await navigator.wakeLock.request("screen"); wake.addEventListener("release", () => { wake = null; }); } } catch (e) { wake = null; }
 }
 function letSleep() { if (wake) { wake.release().catch(() => {}); wake = null; } }
+// The "why" drops down from its button across the whole page, and stops at the bottom of the screen.
+function toggleWhy(open) {
+  const btn = app.querySelector(".whybtn"), drop = document.getElementById("why");
+  if (!btn || !drop || open === drop.classList.contains("open")) return;
+  btn.setAttribute("aria-expanded", open);
+  if (open) {
+    const room = app.querySelector(".stage").getBoundingClientRect().bottom - btn.getBoundingClientRect().bottom - 20;
+    let top = btn.offsetTop + btn.offsetHeight + 10, el = btn.offsetParent;
+    while (el && !el.classList.contains("steppage")) { top += el.offsetTop; el = el.offsetParent; }
+    drop.style.top = top + "px";
+    drop.style.maxHeight = Math.max(room, 180) + "px";
+  } else drop.style.maxHeight = "";
+  drop.classList.toggle("open", open);
+}
 function turn(d) {
   const { view, r } = route();
   if (view !== "recipe") return;
@@ -488,7 +505,8 @@ app.addEventListener("click", (e) => {
   const go = e.target.closest("[data-go]");
   if (go) { turn(+go.dataset.go); return; }
   const why = e.target.closest(".whybtn");
-  if (why) { const open = why.getAttribute("aria-expanded") !== "true"; why.setAttribute("aria-expanded", open); document.getElementById("why").classList.toggle("open", open); if (open) setTimeout(() => why.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "start" }), 340); }
+  if (why) { toggleWhy(why.getAttribute("aria-expanded") !== "true"); return; }
+  if (!e.target.closest(".whydrop")) toggleWhy(false);
 });
 app.addEventListener("input", (e) => { if (e.target.id === "people") setPeople(route().r, +e.target.value); });
 app.addEventListener("change", (e) => {
@@ -500,7 +518,8 @@ app.addEventListener("change", (e) => {
 });
 addEventListener("keydown", (e) => {
   if (e.target.matches && e.target.matches("input[type=range]")) return;
-  if (e.key === "ArrowRight") turn(1); else if (e.key === "ArrowLeft") turn(-1);
+  if (e.key === "Escape") toggleWhy(false);
+  else if (e.key === "ArrowRight") turn(1); else if (e.key === "ArrowLeft") turn(-1);
 });
 let sx = null, sy = 0;
 app.addEventListener("pointerdown", (e) => { sx = e.target.closest(".stage") && !e.target.closest("input, button, summary, label") ? e.clientX : null; sy = e.clientY; });
@@ -510,7 +529,6 @@ app.addEventListener("pointerup", (e) => {
   if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) turn(dx < 0 ? 1 : -1);
 });
 addEventListener("resize", () => { if (route().view === "recipe") render(); });
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && route().view === "recipe") keepAwake(); });
 render();
 </script>
