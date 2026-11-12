@@ -26,6 +26,7 @@ Mock-up: https://claude.ai/artifact/2yBcy8oUc5vkdigyknTmm9
 | [`recipes/`](recipes/) | One Markdown file per recipe. Unsorted for now; it will be organised later. |
 | [`index.html`](index.html) | The site as deployed. Generated: run `python3 prototype/build.py` after changing a recipe or the prototype. |
 | [`prototype/`](prototype/) | What the site is generated from. |
+| [`fonts/`](fonts/) | The two typefaces, served by the site itself, with their open licences. |
 | [`pages/`](pages/) | The privacy policy and the terms of use, as Markdown. Edit the words here, then rebuild. |
 
 ## Adding a recipe (for now)

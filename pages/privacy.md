@@ -27,14 +27,13 @@ this site's data in your browser's settings.
 
 ## What others receive when you visit
 
-To show you a page, your device has to ask other computers for it, as it does for any website.
+To show you a page, your device has to ask another computer for it, as it does for any website.
 
-- **Vercel** hosts the site. It receives your IP address and details of your browser and device, and keeps logs so it can
-  deliver the site and keep it secure. Vercel does this on our behalf. It is based in the United States. See
-  [Vercel's privacy notice](https://vercel.com/legal/privacy-policy).
-- **Google Fonts** supplies the lettering. When a page loads, Google receives your IP address and details of your
-  browser. Google says it sets no cookies for this. See
-  [Google's note on fonts and privacy](https://developers.google.com/fonts/faq/privacy).
+**Vercel** hosts the site. It receives your IP address and details of your browser and device, and keeps logs so it can
+deliver the site and keep it secure. Vercel does this on our behalf. It is based in the United States. See
+[Vercel's privacy notice](https://vercel.com/legal/privacy-policy).
+
+Nothing else is loaded from anywhere else: the lettering, like the rest of the site, comes from the site itself.
 
 We do not add this to anything else, and we cannot tell who you are from it.
 
@@ -45,8 +44,7 @@ website cannot be delivered without it.
 
 ## How long it is kept
 
-We keep nothing ourselves. Vercel and Google keep their logs for the periods set out in their own policies, linked
-above.
+We keep nothing ourselves. Vercel keeps its logs for the periods set out in its own policy, linked above.
 
 ## Your rights
 
