@@ -2,9 +2,9 @@
 
 Last updated 12 November 2026
 
-MoufCooks (cooking.mouftools.com) is a family recipe book. It is run by Alexander, who is responsible for it under UK
-data protection law. Questions, or requests about your data: through the project's page at
-[github.com/alexmouf-work/moufcooks](https://github.com/alexmouf-work/moufcooks).
+MoufCooks (cooking.mouftools.com) is a family recipe book. It is run by Enkefalos Holdings Ltd ("Enkefalos"), who are
+responsible for your data under UK data protection law. Questions, or requests about your data:
+[lemma@enkefalos.co.uk](mailto:lemma@enkefalos.co.uk).
 
 ## In short
 

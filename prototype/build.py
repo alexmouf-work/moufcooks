@@ -13,7 +13,7 @@ def doc(path):
     def keep(m):
         links.append((m.group(1), m.group(2)))
         return f"@@{len(links) - 1}@@"
-    text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", keep, path.read_text())
+    text = re.sub(r"\[([^\]]+)\]\(((?:https?://|mailto:)[^)\s]+)\)", keep, path.read_text())
     title, parts, cur = "", [], []
     for ln in text.splitlines():
         if ln.startswith("# "):
@@ -23,7 +23,7 @@ def doc(path):
         else:
             cur.append(ln)
     parts.append(blocks(cur))
-    body = re.sub(r"@@(\d+)@@", lambda m: '<a href="%s" target="_blank" rel="noopener">%s</a>' % (html.escape(links[int(m.group(1))][1]), html.escape(links[int(m.group(1))][0])), "".join(parts))
+    body = re.sub(r"@@(\d+)@@", lambda m: '<a href="%s"%s>%s</a>' % (html.escape(links[int(m.group(1))][1]), "" if links[int(m.group(1))][1].startswith("mailto:") else ' target="_blank" rel="noopener"', html.escape(links[int(m.group(1))][0])), "".join(parts))
     return {"title": title, "html": body}
 
 docs = {p.stem: doc(p) for p in sorted((here.parent / "pages").glob("*.md"))}

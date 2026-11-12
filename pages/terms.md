@@ -7,7 +7,8 @@ do not use it.
 
 ## What the site is
 
-A family recipe book, free to read, with no account and nothing to pay. It is a family project, not a business.
+A family recipe book, free to read, with no account and nothing to pay. It is run by Enkefalos Holdings Ltd
+("Enkefalos", "we"). Nothing is sold here.
 
 ## Cooking safely
 
@@ -48,4 +49,7 @@ Northern Ireland, you can also use the courts there.
 
 ## Contact
 
-Through the project's page at [github.com/alexmouf-work/moufcooks](https://github.com/alexmouf-work/moufcooks).
+[lemma@enkefalos.co.uk](mailto:lemma@enkefalos.co.uk)
+
+Enkefalos Holdings Ltd is a company registered in England and Wales, company number 17301883. Its registered office
+is at 334 Fulham Road, London, United Kingdom, SW10 9UG.
